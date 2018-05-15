@@ -9,20 +9,20 @@
 
 using namespace std;
 
-// Declaração de classe stub da interface ILNAutenticacao.
+// Declaraï¿½ï¿½o de classe stub da interface ILNAutenticacao.
 
 class StubLNAutenticacao:public ILNAutenticacao{
 
 public:
 
-    // Definições de valores a serem usados como gatilhos para notificações de erros.
+    // Definiï¿½ï¿½es de valores a serem usados como gatilhos para notificaï¿½ï¿½es de erros.
 
-    const static int TRIGGER_FALHA        = 67890;
-    const static int TRIGGER_ERRO_SISTEMA = 78901;
+    const static char * TRIGGER_FALHA        = "pedropacn@gmail.com";
+    const static char * TRIGGER_ERRO_SISTEMA = "turval.go@gmail.com";
 
-    // Declaração de método previsto na interface.
+    // Declaraï¿½ï¿½o de mï¿½todo previsto na interface.
 
-    ResultadoAutenticacao autenticar(const Matricula&, const Senha&) throw(runtime_error);
+    ResultadoAutenticacao autenticar(const cCorreioEletronico&, const cSenha&) throw(runtime_error);
 };
 
 

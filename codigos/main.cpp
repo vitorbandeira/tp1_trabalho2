@@ -18,22 +18,22 @@ int main()
     // EXEMPLO
     // -----------------------------------------------------------
 
-    // Ligação entre controladora na camada de apresentação e stub.
+    // Ligaï¿½ï¿½o entre controladora na camada de apresentaï¿½ï¿½o e stub.
 
     // Instancia as controladoras.
 
     IUAutenticacao  *cntrIUAutenticacao = new CntrIUAutenticacao();
     ILNAutenticacao *stubLNAutenticacao = new StubLNAutenticacao();
 
-    // Liga instância da controladora de interacao a instância do stub na camada de serviço.
+    // Liga instï¿½ncia da controladora de interacao a instï¿½ncia do stub na camada de serviï¿½o.
 
     cntrIUAutenticacao->setCntrLNAutenticacao(stubLNAutenticacao);
 
-    // Para facilitar o teste informa os valores inválidos.
+    // Para facilitar o teste informa os valores invï¿½lidos.
 
     cout << endl << "VALORES DOS TRIGGERS:" << endl << endl;
-    cout << "Matricula invalida          = " << Matricula::MATRICULA_INVALIDA << endl;
-    cout << "Senha invalida              = " << Senha::SENHA_INVALIDA << endl;
+    cout << "Matricula invalida          = " << cCorreioEletronico::EMAIL_INVALIDO << endl;
+    cout << "Senha invalida              = " << cSenha::SENHA_INVALIDA << endl;
     cout << "Trigger de falha            = " << StubLNAutenticacao::TRIGGER_FALHA << endl;
     cout << "Trigger de erro de sistema  = " << StubLNAutenticacao::TRIGGER_ERRO_SISTEMA << endl;
 
@@ -47,7 +47,7 @@ int main()
 
         try{
 
-            // Ilustra soliciatacao de serviço de autenticação.
+            // Ilustra soliciatacao de serviï¿½o de autenticaï¿½ï¿½o.
 
             resultado = cntrIUAutenticacao->autenticar();
         }
@@ -55,7 +55,7 @@ int main()
                  cout << "Erro de sistema." << endl;
         }
 
-        // Critica o resultado da autenticação.
+        // Critica o resultado da autenticaï¿½ï¿½o.
 
         if(resultado.getValor() == ResultadoAutenticacao::SUCESSO) {
             break;

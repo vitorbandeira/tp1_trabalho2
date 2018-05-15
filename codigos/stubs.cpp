@@ -1,38 +1,36 @@
 #include "stubs.h"
 
-//Definições de constantes.
+//Definiï¿½ï¿½es de constantes.
 
-const int StubLNAutenticacao::TRIGGER_FALHA;
-const int StubLNAutenticacao::TRIGGER_ERRO_SISTEMA;
+const char * StubLNAutenticacao::TRIGGER_FALHA;
+const char * StubLNAutenticacao::TRIGGER_ERRO_SISTEMA;
 
 // EXEMPLO
 // --------------------------------------------------------
 
-// Definições de método da classe stub do controlador da lógica de negócio de autenticação.
+// Definiï¿½ï¿½es de mï¿½todo da classe stub do controlador da lï¿½gica de negï¿½cio de autenticaï¿½ï¿½o.
 
-ResultadoAutenticacao StubLNAutenticacao::autenticar(const Matricula &matricula, const Senha &senha) throw(runtime_error) {
+ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &mail, const cSenha &senha) throw(runtime_error) {
 
     // Apresentar dados recebidos.
 
     cout << endl << "StubLNAutenticacao::autenticar" << endl ;
 
-    cout << "Matricula = " << matricula.getValor() << endl ;
-    cout << "Senha     = " << senha.getValor()     << endl ;
+    cout << "EndereÃ§o EletrÃ´nico = " << mail.getCorreioEletronico() << endl;
+    cout << "Senha     = " << senha.getSenha()     << endl ;
 
     ResultadoAutenticacao resultado;
 
-    // Diferentes comportamentos dependendo do valor da matrícula.
+    // Diferentes comportamentos dependendo do valor da matrï¿½cula.
 
-    switch(matricula.getValor()){
-        case TRIGGER_FALHA:
-            resultado.setValor(ResultadoAutenticacao::FALHA);
-            break;
-        case TRIGGER_ERRO_SISTEMA:
-            throw runtime_error("Erro de sistema");
-        default:
-            resultado.setValor(ResultadoAutenticacao::SUCESSO);
-            resultado.setMatricula(matricula);
-        }
+    if(strcmp(mail.getCorreioEletronico(), TRIGGER_FALHA) == 0)
+        resultado.setValor(ResultadoAutenticacao::FALHA);
+    else if(strcmp(mail.getCorreioEletronico(), TRIGGER_ERRO_SISTEMA) == 0)
+        throw runtime_error("Erro de sistema");
+    else{
+        resultado.setValor(ResultadoAutenticacao::SUCESSO);
+        resultado.setMail(mail);
+    }
 
     return resultado;
 }

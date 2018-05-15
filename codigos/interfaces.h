@@ -8,38 +8,38 @@
 
 using namespace std;
 
-// Declaração adiantada.
+// Declaraï¿½ï¿½o adiantada.
 
 class ILNAutenticacao;
 
-// Declaração de interface para serviço de autenticação na camada de apresentação.
+// Declaraï¿½ï¿½o de interface para serviï¿½o de autenticaï¿½ï¿½o na camada de apresentaï¿½ï¿½o.
 
 class IUAutenticacao {
 public:
 
-    // Método por meio do qual é solicitado serviço.
+    // Mï¿½todo por meio do qual ï¿½ solicitado serviï¿½o.
 
     virtual ResultadoAutenticacao autenticar() throw(runtime_error) = 0;
 
-    // Método por meio do qual é estabelecida ligação (link) com a controladora na camada de serviço.
+    // Mï¿½todo por meio do qual ï¿½ estabelecida ligaï¿½ï¿½o (link) com a controladora na camada de serviï¿½o.
 
     virtual void setCntrLNAutenticacao(ILNAutenticacao *) = 0;
 
-    // Método destrutor virtual.
+    // Mï¿½todo destrutor virtual.
 
     virtual ~IUAutenticacao(){}
 };
 
-// Declaração de interface para serviço de autenticação na camada de serviço.
+// Declaraï¿½ï¿½o de interface para serviï¿½o de autenticaï¿½ï¿½o na camada de serviï¿½o.
 
 class ILNAutenticacao {
 public:
 
-    // Método por meio do qual é solicitado serviço.
+    // Mï¿½todo por meio do qual ï¿½ solicitado serviï¿½o.
 
-    virtual ResultadoAutenticacao autenticar(const Matricula&, const Senha&) throw(runtime_error)= 0;
+    virtual ResultadoAutenticacao autenticar(const cCorreioEletronico&, const cSenha&) throw(runtime_error)= 0;
 
-   // Método destrutor virtual.
+   // Mï¿½todo destrutor virtual.
 
     virtual ~ILNAutenticacao(){}
 };

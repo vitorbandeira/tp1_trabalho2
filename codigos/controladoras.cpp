@@ -1,27 +1,27 @@
 #include "controladoras.h"
 
-// Definições de métodos da classe CntrIUAutenticacao.
+// Definiï¿½ï¿½es de mï¿½todos da classe CntrIUAutenticacao.
 
 ResultadoAutenticacao CntrIUAutenticacao::autenticar() throw(runtime_error) {
 
     ResultadoAutenticacao resultado;
-    Matricula matricula;
-    Senha senha;
-    int entrada;
+    cCorreioEletronico email;
+    cSenha senha;
+    char entrada[20];
 
-    // Solicitar matricula e senha.
+    // Solicitar email e senha.
 
     while(true) {
 
         cout << endl << "Autenticacao de usuario." << endl << endl;
 
         try {
-            cout << "Digite a matricula : ";
+            cout << "Digite o endereÃ§o de e-mail : ";
             cin >> entrada;
-            matricula.setValor(entrada);
+            email.setCorreioEletronico(entrada);
             cout << "Digite a senha     : ";
             cin >> entrada;
-            senha.setValor(entrada);
+            senha.setSenha(entrada);
             break;
         }
         catch (const invalid_argument &exp) {
@@ -29,11 +29,11 @@ ResultadoAutenticacao CntrIUAutenticacao::autenticar() throw(runtime_error) {
         }
     }
 
-    // Solicitar autenticação.
+    // Solicitar autenticaï¿½ï¿½o.
 
-    resultado = cntrLNAutenticacao->autenticar(matricula, senha);
+    resultado = cntrLNAutenticacao->autenticar(email, senha);
 
-    // Informar resultado da autenticação.
+    // Informar resultado da autenticaï¿½ï¿½o.
 
     if(resultado.getValor() == ResultadoAutenticacao::FALHA)
     cout << endl << "Falha na autenticacao." << endl;

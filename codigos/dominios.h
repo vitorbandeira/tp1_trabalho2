@@ -294,18 +294,19 @@ private:
      */
     void Validade(const char str[30]) throw (invalid_argument);
 public:
-    /** Método Construtor.
+  const static char EMAIL_INVALIDO[30] = "pedropacn@gmail.com";
+  /** Método Construtor.
     */
-    cCorreioEletronico() {};
-    /** Método Destrutor.
+  cCorreioEletronico(){};
+  /** Método Destrutor.
     */
-    ~cCorreioEletronico() {};
-    /**
+  ~cCorreioEletronico(){};
+  /**
      * Método Construtor com validação de correio eletrônico (email).
      */
-    cCorreioEletronico(char str[30])
-    {
-        setCorreioEletronico(str);
+  cCorreioEletronico(char str[30])
+  {
+      setCorreioEletronico(str);
     }
     /** Método Set. Tenta atribuir uma string ao objeto Correio Eletrônico, passando por um processo de validação. */
     inline void setCorreioEletronico(const char str[30]) throw (invalid_argument)
@@ -314,7 +315,7 @@ public:
         strcpy(string, str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Correio Eletrônico. */
-    inline char * getCorreioEletronico()
+    inline char * getCorreioEletronico() const
     {
         return string;
     }
@@ -338,18 +339,19 @@ private:
      */
     void Validade(const char str[15]) throw (invalid_argument);
 public:
-    /** Método Construtor.
+  const static char SENHA_INVALIDA[9] = "12345678";
+  /** Método Construtor.
     */
-    cSenha() {};
-    /** Método Destrutor.
+  cSenha(){};
+  /** Método Destrutor.
     */
-    ~cSenha() {};
-    /**
+  ~cSenha(){};
+  /**
      * Método Construtor com validação de senha.
      */
-    cSenha(char str[15])
-    {
-        setSenha(str);
+  cSenha(char str[15])
+  {
+      setSenha(str);
     }
     /** Método Set. Tenta atribuir uma string ao objeto Senha, passando por um processo de validação. */
     inline void setSenha(const char str[15]) throw (invalid_argument)
@@ -358,7 +360,7 @@ public:
         strcpy(string, str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Senha. */
-    inline char * getSenha()
+    inline char * getSenha() const
     {
         return string;
     }

@@ -8,6 +8,47 @@
 
 using namespace std;
 
+class Resultado
+{
+
+  protected:
+	int valor;
+
+  public:
+	// Declarações de possíveis resultados.
+
+	const static int SUCESSO = 0;
+	const static int FALHA = 1;
+
+	void setValor(int valor)
+	{
+		this->valor = valor;
+	}
+
+	int getValor() const
+	{
+		return valor;
+	}
+};
+
+class ResultadoAutenticacao : public Resultado
+{
+
+  private:
+	cCorreioEletronico email;
+
+  public:
+	void setMail(const cCorreioEletronico &email)
+	{ // passagem por referência.
+		this->email = email;
+	}
+
+	cCorreioEletronico getMail() const
+	{
+		return email;
+	}
+};
+
 /** Entidade Leitor. Classe que possui como atributos os Dominios: Nome, sobrenome, correio eletronico (email) e senha.*/
 class cLeitor
 {
@@ -256,7 +297,7 @@ public:
 
 
 };
-/** Entidade Vocabulario Controlado. Classe que possui como atributos os Dom�nios: Nome, idioma e data.*/
+/** Entidade Vocabulario Controlado. Classe que possui como atributos os Dom�nios: Nome, idioma e data.*/
 class cVocabControlado
 {
 private:
@@ -312,7 +353,7 @@ public:
 };
 
 
-/** Entidade Termo. Classe que possui como atributos os Dom�nios: Nome, classe de termo e data.*/
+/** Entidade Termo. Classe que possui como atributos os Dom�nios: Nome, classe de termo e data.*/
 class cTermo
 {
 private:

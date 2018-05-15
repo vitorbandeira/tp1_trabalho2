@@ -9,13 +9,13 @@
 
 using namespace std;
 
-// Declaração de classe controladora de interação para o serviço de autenticação.
+// Declaraï¿½ï¿½o de classe controladora de interaï¿½ï¿½o para o serviï¿½o de autenticaï¿½ï¿½o.
 
 class CntrIUAutenticacao:public IUAutenticacao {
 
 private:
 
-    // Referência para servidor.
+    // Referï¿½ncia para servidor.
 
     ILNAutenticacao *cntrLNAutenticacao;
 
