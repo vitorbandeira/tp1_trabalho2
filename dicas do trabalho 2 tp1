@@ -1,0 +1,83 @@
+Trabalho 2
+
+(Questões)
+PASSO1: item 1 (ARQUITETURA)
+
+para cada interface, identificar os métodos com seu tipo, parâmetros, retorno e se lança ou não exceção
+
+---------------------------------------------------------------------------------------------
+
+PASSO2: item 3 (INTERFACES)
+
+(interfaces.h)
+
+Identificar interfaces existentes e seus métodos. Para cada interface identificada, há uma classe que representa tal interface tendo "métodos virtuais puros" (abstratos) ---> ex.: virtual int ativar(email)=0;
+
+***DICA*** : já ir comentando para o Doxygen
+
+----------------------------------------------------------------------------------------------
+
+PASSO3: item 2 e 4 (
+
+implementar subsistemas isolados. Um par stub + controladora.
+
+Para cada modulo, definir uma "classe controladora" (semente):
+CntrACont
+CntrAAut
+CntrAGus
+CntrAVoc
+CntrStubAut
+CntrStubGus
+CntrStubVoc 
+
+As relacionadas a "apresentação" serão realmente implementadas (item2) e as relacionadas a "serviço" são implementados apenas Stubs (item4)
+
+REALIZAÇÃO DE INTERFACES: 
+
+classe controladora implementa a interface realizada
+
+(Arquivo controladoras.h)
+class CntrAAut:public IAAut
+
+IAAut é uma classe com métodos abtratos já declarados
+
+
+DEPENDÊNCIA DE INTERFACES:
+(Arquivo controladoras.cpp)
+referência para a prestadora de serviço
+
+class CntrAAut:public IAut{
+	private:
+		ISAut *cntr;
+	public:
+		void setCntr (ISAut *cntr){
+			this->cntr=cntr;
+	}
+}
+
+class StubSAut:public ISAut {
+
+
+}
+
+
+-----------------------------------------------
+
+implementação das controladoras/stubs:
+
+DICA: começar implementando os serviços (stubs): stub + controladora associada
+
+
+---------------------------------------------------
+
+
+
+módulo de gerenciamento de usuário (classe) também tem os métodos de sua interface na parte privada da classe para facilitar no gerenciamento 
+
+
+
+
+
+
+
+
