@@ -49,6 +49,24 @@ class ResultadoAutenticacao : public Resultado
 	}
 };
 
+class ResultadoGestao : public Resultado
+{
+
+  private:
+	cCorreioEletronico email;
+
+  public:
+	void setMail(const cCorreioEletronico &email)
+	{ // passagem por referência.
+		this->email = email;
+	}
+
+	cCorreioEletronico getMail() const
+	{
+		return email;
+	}
+};
+
 /** Entidade Leitor. Classe que possui como atributos os Dominios: Nome, sobrenome, correio eletronico (email) e senha.*/
 class cLeitor
 {
