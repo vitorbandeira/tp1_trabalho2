@@ -57,6 +57,3 @@ ResultadoGestao StubLNGestao::criarUsuario(const cCorreioEletronico &mail, const
 
     return resultado;
 }
-
-ResultadoGestao 
-

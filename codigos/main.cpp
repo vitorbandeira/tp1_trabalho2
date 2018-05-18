@@ -32,7 +32,7 @@ int main()
     
     switch (escolha)
     {
-        case 1:
+        case 1:{
             IUAutenticacao  *cntrIUAutenticacao = new CntrIUAutenticacao();
             ILNAutenticacao *stubLNAutenticacao = new StubLNAutenticacao();
 
@@ -40,15 +40,7 @@ int main()
 
             cntrIUAutenticacao->setCntrLNAutenticacao(stubLNAutenticacao);
 
-            // Para facilitar o teste informa os valores inv�lidos.
-
-            cout << endl << "VALORES DOS TRIGGERS:" << endl << endl;
-            cout << "Matricula invalida          = " << cCorreioEletronico::EMAIL_INVALIDO << endl;
-            cout << "Senha invalida              = " << cSenha::SENHA_INVALIDA << endl;
-            cout << "Trigger de falha            = " << StubLNAutenticacao::TRIGGER_FALHA << endl;
-            cout << "Trigger de erro de sistema  = " << StubLNAutenticacao::TRIGGER_ERRO_SISTEMA << endl;
-
-            ResultadoAutenticacao resultado;
+            ResultadoAutenticacao resultadoA;
 
             while(true){
 
@@ -60,7 +52,7 @@ int main()
 
                     // Ilustra soliciatacao de servi�o de autentica��o.
 
-                    resultado = cntrIUAutenticacao->autenticar();
+                    resultadoA = cntrIUAutenticacao->autenticar();
                 }
                 catch(const runtime_error &exp){
                         cout << "Erro de sistema." << endl;
@@ -68,7 +60,7 @@ int main()
 
                 // Critica o resultado da autentica��o.
 
-                if(resultado.getValor() == ResultadoAutenticacao::SUCESSO) {
+                if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) {
                     break;
                 }
             }
@@ -76,14 +68,14 @@ int main()
             delete cntrIUAutenticacao;
             delete stubLNAutenticacao;
             break;
-        
-        case 2:
-            IUGestao *cntrIUGestao = new cntrIUGestao();
+        }
+        case 2:{
+            IUGestao *cntrIUGestao = new CntrIUGestao();
             ILNGestao *stubLNGestao = new StubLNGestao();
 
             cntrIUGestao->setCntrLNGestao(stubLNGestao);
 
-            ResultadoGestao resultado;
+            ResultadoGestao resultadoG;
 
             while (true)
             {
@@ -97,7 +89,7 @@ int main()
 
                     // Ilustra soliciatacao de servi�o de autentica��o.
 
-                    resultado = cntrIUGestao->criarUsuario();
+                    resultadoG = cntrIUGestao->criarUsuario();
                 }
                 catch (const runtime_error &exp)
                 {
@@ -106,18 +98,19 @@ int main()
 
                 // Critica o resultado da autentica��o.
 
-                if (resultado.getValor() == ResultadoAutenticacao::SUCESSO)
+                if (resultadoG.getValor() == ResultadoAutenticacao::SUCESSO)
                 {
                     break;
                 }
             }
 
-            delete cntrIUAutenticacao;
-            delete stubLNAutenticacao;
+            delete cntrIUGestao;
+            delete stubLNGestao;
             break;
-
-        default:
+        }
+        default:{
             break;
+        }
     }
 
     return 0;

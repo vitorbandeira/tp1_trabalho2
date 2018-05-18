@@ -11,24 +11,42 @@ using namespace std;
 
 // Declara��o de classe controladora de intera��o para o servi�o de autentica��o.
 
-class CntrIUAutenticacao:public IUAutenticacao {
+class CntrIUAutenticacao : public IUAutenticacao
+{
 
-private:
-
+  private:
     // Refer�ncia para servidor.
 
     ILNAutenticacao *cntrLNAutenticacao;
 
-public:
-
+  public:
     ResultadoAutenticacao autenticar() throw(runtime_error);
 
-    void setCntrLNAutenticacao(ILNAutenticacao*);
+    void setCntrLNAutenticacao(ILNAutenticacao *);
 };
 
+void inline CntrIUAutenticacao::setCntrLNAutenticacao(ILNAutenticacao *cntrLNAutenticacao)
+{
+    this->cntrLNAutenticacao = cntrLNAutenticacao;
+}
 
-void inline CntrIUAutenticacao::setCntrLNAutenticacao(ILNAutenticacao *cntrLNAutenticacao){
-        this->cntrLNAutenticacao = cntrLNAutenticacao;
+class CntrIUGestao : public IUGestao
+{
+
+  private:
+    // Refer�ncia para servidor.
+
+    ILNGestao *cntrLNGestao;
+
+  public:
+    ResultadoGestao criarUsuario() throw(runtime_error);
+
+    void setCntrLNGestao(ILNGestao *);
+};
+
+void inline CntrIUGestao::setCntrLNGestao(ILNGestao *cntrLNGestao)
+{
+    this->cntrLNGestao = cntrLNGestao;
 }
 
 #endif // CONTROLADORAS_H_INCLUDED

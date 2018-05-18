@@ -294,7 +294,7 @@ private:
      */
     void Validade(const char str[30]) throw (invalid_argument);
 public:
-  const static char EMAIL_INVALIDO[30] = "pedropacn@gmail.com";
+  std::string EMAIL_INVALIDO = "pedropacn@gmail.com";
   /** Método Construtor.
     */
   cCorreioEletronico(){};
@@ -315,7 +315,7 @@ public:
         strcpy(string, str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Correio Eletrônico. */
-    inline char * getCorreioEletronico() const
+    inline std::string getCorreioEletronico() const
     {
         return string;
     }
@@ -339,7 +339,7 @@ private:
      */
     void Validade(const char str[15]) throw (invalid_argument);
 public:
-  const static char SENHA_INVALIDA[9] = "12345678";
+  std::string SENHA_INVALIDA = "12345678";
   /** Método Construtor.
     */
   cSenha(){};
@@ -360,7 +360,7 @@ public:
         strcpy(string, str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Senha. */
-    inline char * getSenha() const
+    std::string getSenha() const
     {
         return string;
     }
