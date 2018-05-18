@@ -32,7 +32,9 @@ public:
     string TRIGGER_ERRO_SISTEMA = "turval.go@gmail.com";
 
     ResultadoGestao criarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error);
-}
+};
+
+
 
 
 

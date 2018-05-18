@@ -13,16 +13,16 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &m
 
     cout << endl << "StubLNAutenticacao::autenticar" << endl ;
 
-    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico() << endl;
-    cout << "Senha     = " << senha.getSenha()     << endl ;
+    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico().c_str() << endl;
+    cout << "Senha     = " << senha.getSenha().c_str() << endl;
 
     ResultadoAutenticacao resultado;
 
     // Diferentes comportamentos dependendo do valor da matr�cula.
 
-    if(strcmp(mail.getCorreioEletronico(), TRIGGER_FALHA.c_str()) == 0)
+    if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
-    else if(strcmp(mail.getCorreioEletronico(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
+    else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
         throw runtime_error("Erro de sistema");
     else{
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
@@ -38,16 +38,17 @@ ResultadoGestao StubLNGestao::criarUsuario(const cCorreioEletronico &mail, const
 
     cout << endl << "StubLNGestao::criarUsuario" << endl;
 
-    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico() << endl;
-    cout << "Senha     = " << senha.getSenha() << endl;
+    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico().c_str() << endl;
+    cout << "Senha = " << senha.getSenha().c_str() << endl;
+    cout << "Tipo de usuário = " << endl;
 
     ResultadoGestao resultado;
 
     // Diferentes comportamentos dependendo do valor da matr�cula.
 
-    if (strcmp(mail.getCorreioEletronico(), TRIGGER_FALHA.c_str()) == 0)
+    if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
-    else if (strcmp(mail.getCorreioEletronico(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
+    else if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
         throw runtime_error("Erro de sistema");
     else
     {

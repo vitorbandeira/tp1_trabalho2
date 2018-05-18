@@ -18,7 +18,7 @@ void TUcLeitor::TestarSucesso()
         leitor->setSobrenome(SOBRENOME_TESTE);
         leitor->setCorreioEletronico(CORREIO_ELETRONICO_TESTE);
         leitor->setSenha(SENHA_TESTE);
-        if (strcmp (leitor->getNome(), NOME_TESTE) != 0 || strcmp (leitor->getSobrenome(), SOBRENOME_TESTE) != 0 || strcmp (leitor->getCorreioEletronico(), CORREIO_ELETRONICO_TESTE) != 0 || strcmp (leitor->getSenha(), SENHA_TESTE) != 0)
+        if (strcmp (leitor->getNome().c_str(), NOME_TESTE) != 0 || strcmp (leitor->getSobrenome().c_str(), SOBRENOME_TESTE) != 0 || strcmp (leitor->getCorreioEletronico(), CORREIO_ELETRONICO_TESTE) != 0 || strcmp (leitor->getSenha(), SENHA_TESTE) != 0)
         {
             estado = FALHA;
         }

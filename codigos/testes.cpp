@@ -285,7 +285,7 @@ void TUcCorreioEletronico::TestarSucesso()
     try
     {
         correioeletronico->setCorreioEletronico(valid);
-        if (strcmp (correioeletronico->getCorreioEletronico(), valid) != 0)
+        if (strcmp (correioeletronico->getCorreioEletronico().c_str(), valid) != 0)
         {
             estado = FALHA;
         }
@@ -344,7 +344,7 @@ void TUcSenha::TestarSucesso()
     try
     {
         senha->setSenha(valid);
-        if (strcmp (senha->getSenha(), valid) != 0)
+        if (strcmp (senha->getSenha().c_str(), valid) != 0)
         {
             estado = FALHA;
         }

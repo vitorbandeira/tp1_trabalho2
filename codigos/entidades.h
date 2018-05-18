@@ -99,7 +99,7 @@ public:
 	}
 
 	/** Metodo Get Nome para entidade Leitor.*/
-	inline char * getNome(){
+	inline string getNome(){
         return nome->getNome();
 	}
 
@@ -109,7 +109,7 @@ public:
 	}
 
 	/** Metodo Get Sobrenome para entidade Leitor.*/
-	inline char * getSobrenome(){
+	inline string getSobrenome(){
         return sobrenome->getSobrenome();
 	}
 
@@ -119,7 +119,7 @@ public:
 	}
 
 	/** Metodo Get Correio Eletronico para entidade Leitor.*/
-	inline char * getCorreioEletronico(){
+	inline string getCorreioEletronico(){
         return correioeletronico->getCorreioEletronico();
 	}
 
@@ -130,7 +130,7 @@ public:
 	}
 
 	/** Metodo Get Senha para entidade Leitor.*/
-	inline char * getSenha(){
+	inline string getSenha(){
         return senha->getSenha();
 	}
 
@@ -172,7 +172,7 @@ public:
 	}
 
 	/** Metodo Get Nome para entidade Desenvolvedor.*/
-	inline char * getNome(){
+	inline string getNome(){
         return nome->getNome();
 	}
 
@@ -182,7 +182,7 @@ public:
 	}
 
 	/** Metodo Get Sobrenome para entidade Desenvolvedor.*/
-	inline char * getSobrenome(){
+	inline string getSobrenome(){
         return sobrenome->getSobrenome();
 	}
 
@@ -192,7 +192,7 @@ public:
 	}
 
 	/** Metodo Get Correio Eletronico para entidade Desenvolvedor.*/
-	inline char * getCorreioEletronico(){
+	inline string getCorreioEletronico(){
         return correioeletronico->getCorreioEletronico();
 	}
 
@@ -202,7 +202,7 @@ public:
 	}
 
 	/** Metodo Get Senha para entidade Desenvolvedor.*/
-	inline char * getSenha(){
+	inline string getSenha(){
         return senha->getSenha();
 	}
 
@@ -212,7 +212,7 @@ public:
 	}
 
 	/** Metodo Get Data para entidade Desenvolvedor.*/
-	inline char * getData(){
+	inline string getData(){
         return data->getData();
 	}
 };
@@ -259,7 +259,7 @@ public:
 	}
 
 	/** Metodo Get Nome para entidade Administrador.*/
-	inline char * getNome(){
+	inline string getNome(){
         return nome->getNome();
 	}
 
@@ -269,7 +269,7 @@ public:
 	}
 
 	/** Metodo Get Sobrenome para entidade Administrador.*/
-	inline char * getSobrenome(){
+	inline string getSobrenome(){
         return sobrenome->getSobrenome();
 	}
 
@@ -279,7 +279,7 @@ public:
 	}
 
 	/** Metodo Get Correio Eletronico para entidade Administrador.*/
-	inline char * getCorreioEletronico(){
+	inline string getCorreioEletronico(){
         return correioeletronico->getCorreioEletronico();
 	}
 
@@ -289,7 +289,7 @@ public:
 	}
 
 	/** Metodo Get Senha para entidade Administrador.*/
-	inline char * getSenha(){
+	inline string getSenha(){
         return senha->getSenha();
 	}
 
@@ -299,7 +299,7 @@ public:
 	}
 
 	/** Metodo Get Data para entidade Administrador.*/
-	inline char * getData(){
+	inline string getData(){
         return data->getData();
 	}
 
@@ -309,7 +309,7 @@ public:
 	}
 
 	/** Metodo Get Endereco para entidade Administrador.*/
-	inline char * getEndereco(){
+	inline string getEndereco(){
         return getEndereco();
 	}
 
@@ -345,7 +345,7 @@ public:
 	}
 
 	/** Metodo Get Nome para entidade Vocabulario Controlado.*/
-	inline char * getNome(){
+	inline string getNome(){
         return nome->getNome();
 	}
 
@@ -355,7 +355,7 @@ public:
 	}
 
     /** Metodo Get Idioma para entidade Vocabulario Controlado.*/
-	inline char * getIdioma(){
+	inline string getIdioma(){
         return idioma->getIdioma();
 	}
 
@@ -365,7 +365,7 @@ public:
 	}
 
 	/** Metodo Get Data para entidade Vocabulario Controlado.*/
-	inline char * getData(){
+	inline string getData(){
         return data->getData();
 	}
 };
@@ -411,7 +411,7 @@ public:
 	}
 
 	/** Metodo Get Data para entidade Termo.*/
-	inline char * getData(){
+	inline string getData(){
         return data->getData();
 	}
 
@@ -421,7 +421,7 @@ public:
 	}
 
 	/** Metodo Get Classe de Termo para entidade Termo.*/
-	inline char * getClasseDeTermo(){
+	inline string getClasseDeTermo(){
         return classedetermo->getClasseDeTermo();
 	}
 
@@ -454,7 +454,7 @@ public:
 	}
 
 	/** Metodo Get Data para entidade Definicao.*/
-	inline char * getData(){
+	inline string getData(){
         return data->getData();
 	}
 
