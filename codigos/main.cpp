@@ -87,9 +87,7 @@ int main()
                 try
                 {
 
-                    // Ilustra soliciatacao de servi�o de autentica��o.
-
-                    resultadoG = cntrIUGestao->criarUsuario();
+                    resultadoG = cntrIUGestao->criarLeitor();
                 }
                 catch (const runtime_error &exp)
                 {

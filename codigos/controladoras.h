@@ -39,7 +39,9 @@ class CntrIUGestao : public IUGestao
     ILNGestao *cntrLNGestao;
 
   public:
-    ResultadoGestao criarUsuario() throw(runtime_error);
+    ResultadoGestao criarLeitor() throw(runtime_error);
+    ResultadoGestao criarDesenvolvedor() throw(runtime_error);
+    ResultadoGestao criarAdministrador() throw(runtime_error);
 
     void setCntrLNGestao(ILNGestao *);
 };

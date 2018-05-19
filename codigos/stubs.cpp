@@ -32,15 +32,8 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &m
     return resultado;
 }
 
-ResultadoGestao StubLNGestao::criarUsuario(const cCorreioEletronico &mail, const cSenha &senha) throw(runtime_error){
-
-    // Apresentar dados recebidos.
-
-    cout << endl << "StubLNGestao::criarUsuario" << endl;
-
-    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico().c_str() << endl;
-    cout << "Senha = " << senha.getSenha().c_str() << endl;
-    cout << "Tipo de usuário = " << endl;
+ResultadoGestao StubLNGestao::criarLeitor(const cCorreioEletronico &mail, const cSenha &senha, const cNome &nome, const cSobrenome &sobrenome) throw(runtime_error)
+{
 
     ResultadoGestao resultado;
 
@@ -55,6 +48,59 @@ ResultadoGestao StubLNGestao::criarUsuario(const cCorreioEletronico &mail, const
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
         resultado.setMail(mail);
     }
+    cout << "Usuário criado com sucesso" << endl;
+
+    return resultado;
+}
+
+ResultadoGestao StubLNGestao::criarDesenvolvedor(   const cCorreioEletronico &mail, 
+                                                    const cSenha &senha,
+                                                    const cNome &nome, 
+                                                    const cSobrenome &sobrenome, 
+                                                    const cData &data) throw(runtime_error)
+{
+
+    ResultadoGestao resultado;
+
+    // Diferentes comportamentos dependendo do valor da matr�cula.
+
+    if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
+        resultado.setValor(ResultadoAutenticacao::FALHA);
+    else if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
+        throw runtime_error("Erro de sistema");
+    else
+    {
+        resultado.setValor(ResultadoAutenticacao::SUCESSO);
+        resultado.setMail(mail);
+    }
+    cout << "Usuário criado com sucesso" << endl;
+
+    return resultado;
+}
+
+ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &mail, 
+                                                    const cSenha &senha, 
+                                                    const cNome &nome, 
+                                                    const cSobrenome &sobrenome, 
+                                                    const cData &data, 
+                                                    const cEndereco &endereco, 
+                                                    const cTelefone &telefone) throw(runtime_error)
+{
+
+    ResultadoGestao resultado;
+
+    // Diferentes comportamentos dependendo do valor da matr�cula.
+
+    if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
+        resultado.setValor(ResultadoAutenticacao::FALHA);
+    else if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
+        throw runtime_error("Erro de sistema");
+    else
+    {
+        resultado.setValor(ResultadoAutenticacao::SUCESSO);
+        resultado.setMail(mail);
+    }
+    cout << "Usuário criado com sucesso" << endl;
 
     return resultado;
 }

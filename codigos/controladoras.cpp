@@ -49,12 +49,14 @@ ResultadoAutenticacao CntrIUAutenticacao::autenticar() throw(runtime_error)
     return resultadoA;
 }
 
-ResultadoGestao CntrIUGestao::criarUsuario() throw(runtime_error)
+ResultadoGestao CntrIUGestao::criarLeitor() throw(runtime_error)
 {
 
     ResultadoGestao resultadoG;
     cCorreioEletronico email;
     cSenha senha;
+    cNome nome;
+    cSobrenome sobrenome;
     char entrada[20];
 
     // Solicitar email, senha e tipo da conta.
@@ -71,17 +73,15 @@ ResultadoGestao CntrIUGestao::criarUsuario() throw(runtime_error)
             cout << "Digite o endereço de e-mail : ";
             cin >> entrada;
             email.setCorreioEletronico(entrada);
-            cout << "Digite a senha     : ";
+            cout << "Digite a senha : ";
             cin >> entrada;
             senha.setSenha(entrada);
-            cout << "Digite o tipo da conta : " << endl;
-            cout << "1 - Leitor : " << endl;
-            cout << "2 - Desenvolvedor : " << endl;
-            cout << "3 - Administrador : " << endl;
-            int tipo = 0;
-            cin >> tipo;
-            if (1 > tipo || tipo > 3)
-                throw invalid_argument("Esse tipo de conta não existe");
+            cout << "Digite o Nome : ";
+            cin >> entrada;
+            nome.setNome(entrada);
+            cout << "Digite o sobrenome : ";
+            cin >> entrada;
+            sobrenome.setSobrenome(entrada);
 
             break;
         }
@@ -94,7 +94,135 @@ ResultadoGestao CntrIUGestao::criarUsuario() throw(runtime_error)
 
     // Solicitar autentica��o.
 
-    resultadoG = cntrLNGestao->criarUsuario(email, senha);
+    resultadoG = cntrLNGestao->criarLeitor(email, senha, nome, sobrenome);
+
+    // Informar resultado da autentica��o.
+
+    if (resultadoG.getValor() == ResultadoAutenticacao::FALHA)
+        cout << endl
+             << "Falha na autenticacao." << endl;
+
+    return resultadoG;
+}
+
+ResultadoGestao CntrIUGestao::criarDesenvolvedor() throw(runtime_error)
+{
+
+    ResultadoGestao resultadoG;
+    cCorreioEletronico email;
+    cSenha senha;
+    cNome nome;
+    cSobrenome sobrenome;
+    cData data;
+    char entrada[20];
+
+    // Solicitar email, senha e tipo da conta.
+
+    while (true)
+    {
+
+        cout << endl
+             << "Autenticacao de usuario." << endl
+             << endl;
+
+        try
+        {
+            cout << "Digite o endereço de e-mail : ";
+            cin >> entrada;
+            email.setCorreioEletronico(entrada);
+            cout << "Digite a senha : ";
+            cin >> entrada;
+            senha.setSenha(entrada);
+            cout << "Digite o Nome : ";
+            cin >> entrada;
+            nome.setNome(entrada);
+            cout << "Digite o sobrenome : ";
+            cin >> entrada;
+            sobrenome.setSobrenome(entrada);
+            cout << "Digite a data de nascimento : ";
+            cin >> entrada;
+            data.setData(entrada);
+
+            break;
+        }
+        catch (const invalid_argument &exp)
+        {
+            cout << endl
+                 << "Dado em formato incorreto." << endl;
+        }
+    }
+
+    // Solicitar autentica��o.
+
+    resultadoG = cntrLNGestao->criarDesenvolvedor(email, senha, nome, sobrenome, data);
+
+    // Informar resultado da autentica��o.
+
+    if (resultadoG.getValor() == ResultadoAutenticacao::FALHA)
+        cout << endl
+             << "Falha na autenticacao." << endl;
+
+    return resultadoG;
+}
+
+ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
+{
+
+    ResultadoGestao resultadoG;
+    cCorreioEletronico email;
+    cSenha senha;
+    cNome nome;
+    cSobrenome sobrenome;
+    cData data;
+    cTelefone telefone;
+    cEndereco endereco;
+    char entrada[20];
+
+    // Solicitar email, senha e tipo da conta.
+
+    while (true)
+    {
+
+        cout << endl
+             << "Autenticacao de usuario." << endl
+             << endl;
+
+        try
+        {
+            cout << "Digite o endereço de e-mail : ";
+            cin >> entrada;
+            email.setCorreioEletronico(entrada);
+            cout << "Digite a senha : ";
+            cin >> entrada;
+            senha.setSenha(entrada);
+            cout << "Digite o Nome : ";
+            cin >> entrada;
+            nome.setNome(entrada);
+            cout << "Digite o sobrenome : ";
+            cin >> entrada;
+            sobrenome.setSobrenome(entrada);
+            cout << "Digite a telefone : ";
+            cin >> entrada;
+            telefone.setTelefone(entrada);
+            cout << "Digite a endereço : ";
+            cin >> entrada;
+            endereco.setEndereco(entrada);
+            cout << "Digite a data de nascimento : ";
+            cin >> entrada;
+            data.setData(entrada);
+
+            break;
+        }
+        catch (const invalid_argument &exp)
+        {
+            cout << endl
+                 << "Dado em formato incorreto." << endl;
+        }
+    }
+
+    // Solicitar autentica��o.
+
+    resultadoG = cntrLNGestao->criarAdministrador(email, senha, nome, sobrenome, data, endereco, telefone);
 
     // Informar resultado da autentica��o.
 
