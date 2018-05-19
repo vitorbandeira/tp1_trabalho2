@@ -77,7 +77,7 @@ class ILNGestao
 
     virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
     virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
-    virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, cTelefone) throw(runtime_error) = 0;
+    virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
 
     // M�todo destrutor virtual.
 

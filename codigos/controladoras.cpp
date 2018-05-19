@@ -63,11 +63,6 @@ ResultadoGestao CntrIUGestao::criarLeitor() throw(runtime_error)
 
     while (true)
     {
-
-        cout << endl
-             << "Autenticacao de usuario." << endl
-             << endl;
-
         try
         {
             cout << "Digite o endereço de e-mail : ";

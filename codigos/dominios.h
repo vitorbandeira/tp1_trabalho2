@@ -241,7 +241,6 @@ private:
      * String para datas.
      */
     char string[11];
-
     /**
      * Método de Validação com lançamento de exceção. Valida uma data passada de acordo com alguns critérios.
      */

@@ -116,7 +116,6 @@ void cData::Validade(const char str[11]) throw (invalid_argument)
     char* aux[4];
     char* iterador;
 
-
     if (str[PRIMEIRA_BARRA] != '/' && str[SEGUNDA_BARRA] != '/' )
         throw invalid_argument ("Formatacao incorreta.");
 
@@ -124,6 +123,7 @@ void cData::Validade(const char str[11]) throw (invalid_argument)
     strcpy(data,str); //PRESERVA A STRING ORIGINAL str
 
     iterador = strtok (data,"/");
+    cout << "cheguei aqui" << endl;
     while (iterador != NULL)
     {
         aux[i]=iterador;

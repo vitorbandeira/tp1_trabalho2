@@ -15,6 +15,11 @@ using namespace std;
 int main()
 {
 
+    cData temp_data;
+    char temp2[11] = "12/06/1998";
+    temp_data.setData(temp2);
+    cout << temp_data.getData() << endl;
+
     int escolha = 0;
 
     cout << "1 - Autentiacar" << endl;
@@ -70,7 +75,7 @@ int main()
             break;
         }
         case 2:{
-            IUGestao *cntrIUGestao = new CntrIUGestao();
+            IUGestao *cntrIUGestao  = new CntrIUGestao();
             ILNGestao *stubLNGestao = new StubLNGestao();
 
             cntrIUGestao->setCntrLNGestao(stubLNGestao);
@@ -86,8 +91,37 @@ int main()
 
                 try
                 {
-
-                    resultadoG = cntrIUGestao->criarLeitor();
+                    bool controle = true;
+                    while(controle)
+                    {
+                        cout << "Qual tipo de usuário deseja criar?" << endl;
+                        cout << "1 - Leitor"        << endl;
+                        cout << "2 - Desenvolvedor" << endl;
+                        cout << "3 - Administrador" << endl;
+                        cout << "4 - Sair"          << endl;
+                        escolha = 0;
+                        cin >> escolha;
+                        switch (escolha)
+                        {
+                        case 1:
+                            resultadoG = cntrIUGestao->criarLeitor();
+                            controle = false;
+                            break;
+                        case 2:
+                            resultadoG = cntrIUGestao->criarDesenvolvedor();
+                            controle = false;
+                            break;
+                        case 3:
+                            resultadoG = cntrIUGestao->criarAdministrador();
+                            controle = false;
+                            break;
+                        case 4:
+                            return 1;
+                        default:
+                            controle = true;
+                            break;
+                        }
+                    }
                 }
                 catch (const runtime_error &exp)
                 {

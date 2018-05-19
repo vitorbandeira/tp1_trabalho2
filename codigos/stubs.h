@@ -42,7 +42,7 @@ class StubLNGestao : public ILNGestao
                                             const cNome &, 
                                             const cSobrenome &, 
                                             const cData &) throw(runtime_error);
-                                            
+
     ResultadoGestao criarAdministrador      (const cCorreioEletronico &, 
                                             const cSenha &, 
                                             const cNome &, 
