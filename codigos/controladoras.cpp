@@ -1,4 +1,5 @@
 #include "controladoras.h"
+#include "stdio.h"
 
 // Defini��es de m�todos da classe CntrIUAutenticacao.
 
@@ -196,15 +197,16 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
             cout << "Digite o sobrenome : ";
             cin >> entrada;
             sobrenome.setSobrenome(entrada);
-            cout << "Digite a telefone : ";
+            cout << "Digite a data de nascimento : ";
             cin >> entrada;
+            data.setData(entrada);
+            getchar();
+            cout << "Digite a telefone : ";
+            scanf("%[^\n]%*c", entrada);
             telefone.setTelefone(entrada);
             cout << "Digite a endereço : ";
             cin >> entrada;
             endereco.setEndereco(entrada);
-            cout << "Digite a data de nascimento : ";
-            cin >> entrada;
-            data.setData(entrada);
 
             break;
         }

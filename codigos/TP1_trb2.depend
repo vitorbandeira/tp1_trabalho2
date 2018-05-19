@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1526758689 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1526762821 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
 	"controladoras.h"
+	"stdio.h"
 
 1526704425 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
 	"interfaces.h"
@@ -24,7 +25,7 @@
 	<cstring>
 	"dominios.h"
 
-1526656659 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.cpp
+1526761637 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.cpp
 	"dominios.h"
 	<string.h>
 	<stdlib.h>
@@ -34,7 +35,7 @@
 	"entidades.h"
 	<string.h>
 
-1526759189 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
+1526761374 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>

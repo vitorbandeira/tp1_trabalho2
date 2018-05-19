@@ -14,11 +14,10 @@ using namespace std;
 
 int main()
 {
-
-    cData temp_data;
-    char temp2[11] = "12/06/1998";
-    temp_data.setData(temp2);
-    cout << temp_data.getData() << endl;
+    cTelefone tempClass;
+    string tempStr = "61 99999-9999";
+    tempClass.setTelefone(tempStr.c_str());
+    cout << tempClass.getTelefone() << endl;
 
     int escolha = 0;
 
