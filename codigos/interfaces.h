@@ -58,6 +58,7 @@ class IUGestao
     virtual ResultadoGestao criarLeitor() throw(runtime_error) = 0;
     virtual ResultadoGestao criarDesenvolvedor() throw(runtime_error) = 0;
     virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
+    virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
 
     // M�todo por meio do qual � estabelecida liga��o (link) com a controladora na camada de servi�o.
 
@@ -78,6 +79,7 @@ class ILNGestao
     virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
     virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
     virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
+    virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
 
     // M�todo destrutor virtual.
 

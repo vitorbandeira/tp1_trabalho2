@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1526762821 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1526763861 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
 	"controladoras.h"
 	"stdio.h"
 
-1526704425 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
+1526763889 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
 	"interfaces.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1526757400 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
+1526763939 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>
@@ -35,7 +35,7 @@
 	"entidades.h"
 	<string.h>
 
-1526761374 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
+1526763952 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -45,13 +45,13 @@
 	"controladoras.h"
 	"stubs.h"
 
-1526757403 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.h
+1526764066 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.h
 	"Interfaces.h"
 	<stdexcept>
 	<iostream>
 	<typeinfo>
 
-1526757406 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.cpp
+1526764023 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.cpp
 	"stubs.h"
 
 1526325783 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\teste.c

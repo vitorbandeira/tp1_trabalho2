@@ -42,6 +42,7 @@ class CntrIUGestao : public IUGestao
     ResultadoGestao criarLeitor() throw(runtime_error);
     ResultadoGestao criarDesenvolvedor() throw(runtime_error);
     ResultadoGestao criarAdministrador() throw(runtime_error);
+    ResultadoGestao apagarUsuario() throw(runtime_error);
 
     void setCntrLNGestao(ILNGestao *);
 };

@@ -14,10 +14,6 @@ using namespace std;
 
 int main()
 {
-    cTelefone tempClass;
-    string tempStr = "61 99999-9999";
-    tempClass.setTelefone(tempStr.c_str());
-    cout << tempClass.getTelefone() << endl;
 
     int escolha = 0;
 
@@ -93,11 +89,12 @@ int main()
                     bool controle = true;
                     while(controle)
                     {
-                        cout << "Qual tipo de usuário deseja criar?" << endl;
+                        cout << "O que deseja fazer?" << endl;
                         cout << "1 - Leitor"        << endl;
                         cout << "2 - Desenvolvedor" << endl;
                         cout << "3 - Administrador" << endl;
-                        cout << "4 - Sair"          << endl;
+                        cout << "4 - Apagar usuário" << endl;
+                        cout << "5 - Sair"          << endl;
                         escolha = 0;
                         cin >> escolha;
                         switch (escolha)
@@ -115,6 +112,10 @@ int main()
                             controle = false;
                             break;
                         case 4:
+                            resultadoG = cntrIUGestao->apagarUsuario();
+                            controle = false;
+                            break;
+                        case 5:
                             return 1;
                         default:
                             controle = true;

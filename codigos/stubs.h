@@ -32,24 +32,27 @@ class StubLNGestao : public ILNGestao
     string TRIGGER_FALHA = "pedropacn@gmail.com";
     string TRIGGER_ERRO_SISTEMA = "turval.go@gmail.com";
 
-    ResultadoGestao criarLeitor             (const cCorreioEletronico &, 
+    ResultadoGestao criarLeitor            (const cCorreioEletronico &, 
                                             const cSenha &, 
                                             const cNome &, 
                                             const cSobrenome &) throw(runtime_error);
 
-    ResultadoGestao criarDesenvolvedor      (const cCorreioEletronico &, 
+    ResultadoGestao criarDesenvolvedor     (const cCorreioEletronico &, 
                                             const cSenha &, 
                                             const cNome &, 
                                             const cSobrenome &, 
                                             const cData &) throw(runtime_error);
 
-    ResultadoGestao criarAdministrador      (const cCorreioEletronico &, 
+    ResultadoGestao criarAdministrador     (const cCorreioEletronico &, 
                                             const cSenha &, 
                                             const cNome &, 
                                             const cSobrenome &, 
                                             const cData &, 
                                             const cEndereco &, 
                                             const cTelefone &) throw(runtime_error);
+    
+    ResultadoGestao apagarUsuario          (const cCorreioEletronico &, 
+                                            const cSenha &) throw(runtime_error);
 };
 
 
