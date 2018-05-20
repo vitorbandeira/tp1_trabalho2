@@ -8,59 +8,69 @@
 
 using namespace std;
 
+/** Entidade Resultado.*/
 class Resultado
 {
-
   protected:
 	int valor;
 
   public:
-	// Declarações de possíveis resultados.
 
-	const static int SUCESSO = 0;
-	const static int FALHA = 1;
+	const static int SUCESSO = 0; /** Constante para cenario de SUCESSO.*/
+	const static int FALHA = 1; /** Constante para cenario de FALHA. */
 
+/** Metodo setValor.*/
 	void setValor(int valor)
 	{
 		this->valor = valor;
 	}
-
+/** Metodo getValor.*/
 	int getValor() const
 	{
 		return valor;
 	}
 };
 
+/** Entidade ResultadoAutenticacao.*/
 class ResultadoAutenticacao : public Resultado
 {
 
   private:
-	cCorreioEletronico email;
+ 
+	cCorreioEletronico email; /** Atributo Correio Eletrônico.*/
 
   public:
+
+ /** Metodo setMail.*/
 	void setMail(const cCorreioEletronico &email)
 	{ // passagem por referência.
 		this->email = email;
 	}
 
+/** Metodo getMail.*/
 	cCorreioEletronico getMail() const
 	{
 		return email;
 	}
 };
 
+/** Entidade ResultadoGestao. */
 class ResultadoGestao : public Resultado
 {
 
   private:
-	cCorreioEletronico email;
+
+	cCorreioEletronico email; /** Atributo Email/Correio Eletronico.*/
 
   public:
+
+/** Metodo setMail*/
 	void setMail(const cCorreioEletronico &email)
 	{ // passagem por referência.
 		this->email = email;
 	}
 
+/** Metodo getMail.*/
 	cCorreioEletronico getMail() const
 	{
 		return email;
