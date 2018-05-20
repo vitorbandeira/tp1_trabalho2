@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1526763861 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1526764249 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
 	"controladoras.h"
 	"stdio.h"
 
@@ -35,7 +35,7 @@
 	"entidades.h"
 	<string.h>
 
-1526763952 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
+1526849373 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>

@@ -9,13 +9,6 @@ using namespace std;
 
 ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &mail, const cSenha &senha) throw(runtime_error) {
 
-    // Apresentar dados recebidos.
-
-    cout << endl << "StubLNAutenticacao::autenticar" << endl ;
-
-    cout << "Endereço Eletrônico = " << mail.getCorreioEletronico().c_str() << endl;
-    cout << "Senha     = " << senha.getSenha().c_str() << endl;
-
     ResultadoAutenticacao resultado;
 
     // Diferentes comportamentos dependendo do valor da matr�cula.

@@ -1,0 +1,58 @@
+Geral
+O sistema a ser desenvolvido possibilitará a construção de vocabulários controlados (vide exemplo dessa classe de sistema emhttp://vocbench.uniroma2.it/). 
+Por meio do sistema, será possível construir vocabulários controlados estruturados como listasde termos. 
+
+
+
+Acesso e login
+Para acessar o sistema, o usuário precisa criar uma conta. 
+
+Existem os seguintes tipos de conta: leitor, desenvolvedore administrador. 
+
+Uma vez criada uma conta, para acessar o sistema, o usuário deve informar o seu endereço de correioeletrônico e a sua senha. 
+
+
+
+Leitor
+Para criar uma conta de leitor, o usuário deve informar nome, sobrenome, endereço de correioeletrônico e senha. 
+
+Os seguintes serviços estão disponíveis aos leitores: apresentar dados do usuário, editar dados do usuário,excluir conta, 
+listar nomes dos vocabulários controlados, apresentar dados de vocabulário controlado, consultar termo,consultar definição de termo. 
+
+
+Desenvolvedor
+Para criar uma conta de desenvolvedor, o usuário deve informar nome, sobrenome, data denascimento, endereço de correio eletrônico e senha.
+
+Além dos serviços disponíveis aos leitores, os seguintes serviços estãodisponíveis aos desenvolvedores: 
+cadastrar como desenvolvedor de vocabulário controlado; criar, excluir, editar termo edefinição de termo. 
+
+
+Especificações dos temos
+Cada desenvolvedor pode se cadastrar como desenvolvedor de quantos vocabulários controlados queira.
+
+Cada vocabulário controlado pode ter de zero a dez desenvolvedores. 
+
+Cada vocabulário controlado pode conter zero ou váriostermos. 
+
+Cada termo pertence a um vocabulário controlado. Quando um termo é criado, o desenvolvedor deve informar nomedo termo, classe do termo e data. 
+
+Cada termo pode ter de zero a cinco definições. Quando de uma definição, o desenvolvedordeve informar o texto da definição e data. 
+
+Cada termo pode ter de zero a cinco definições. Cada definição está associada a umou a vários -termos. 
+
+Quando só um termo está associado a uma definição, esse é o termo preferido (preferred term). 
+
+Quando mais de um termo está associado a uma definição, um é o preferido e os outros são não preferidos (non preferred term). 
+
+
+Admininstrador
+Paracriar uma conta de administrador, o usuário deve informar: 
+nome, sobrenome, telefone, data de nascimento, endereço, endereçode correio eletrônico e senha. 
+
+Um admininstrador pode criar quantos vocabulários controlados queira. Quando um vocabuláriocontrolado é criado, o administrador deve informar: 
+nome do vocabulário controlado, texto de definição, idioma e data. 
+
+Ao serexcluída a conta de um administrador, são excluídos os dados dos vocabulários administrados, 
+os termos do vocabuláriocontrolado e as definições apropriadas. 
+
+Além dos serviços anteriormente listados, os seguintes serviços estão disponíveis paraos administradores: editar definição de vocabulário controlado, alterar idioma de vocabulário controlado, excluir vocabuláriocontrolado.

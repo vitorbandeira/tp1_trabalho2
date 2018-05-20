@@ -52,38 +52,72 @@ class ILNGestao;
 
 class IUGestao
 {
-  public:
-    // M�todo por meio do qual � solicitado servi�o.
+public:
+  // M�todo por meio do qual � solicitado servi�o.
 
-    virtual ResultadoGestao criarLeitor() throw(runtime_error) = 0;
-    virtual ResultadoGestao criarDesenvolvedor() throw(runtime_error) = 0;
-    virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
-    virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
+  virtual ResultadoGestao criarLeitor() throw(runtime_error) = 0;
+  virtual ResultadoGestao criarDesenvolvedor() throw(runtime_error) = 0;
+  virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
+  virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
 
-    // M�todo por meio do qual � estabelecida liga��o (link) com a controladora na camada de servi�o.
+  // M�todo por meio do qual � estabelecida liga��o (link) com a controladora na camada de servi�o.
 
-    virtual void setCntrLNGestao(ILNGestao *) = 0;
+  virtual void setCntrLNGestao(ILNGestao *) = 0;
 
-    // M�todo destrutor virtual.
+  // M�todo destrutor virtual.
 
-    virtual ~IUGestao() {}
+  virtual ~IUGestao() {}
 };
 
 // Declara��o de interface para servi�o de autentica��o na camada de servi�o.
 
 class ILNGestao
 {
-  public:
-    // M�todo por meio do qual � solicitado servi�o.
+public:
+  // M�todo por meio do qual � solicitado servi�o.
 
-    virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
-    virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
-    virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
-    virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
+  virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
+  virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
+  virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
+  virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
 
-    // M�todo destrutor virtual.
+  // M�todo destrutor virtual.
 
-    virtual ~ILNGestao() {}
+  virtual ~ILNGestao() {}
+};
+
+class ILNVocabulario;
+
+// Declara��o de interface para servi�o de autentica��o na camada de apresenta��o.
+
+class IUVocabulario
+{
+public:
+  // M�todo por meio do qual � solicitado servi�o.
+
+  virtual ResultadoVocabulario criarLeitor() throw(runtime_error) = 0;
+
+  // M�todo por meio do qual � estabelecida liga��o (link) com a controladora na camada de servi�o.
+
+  virtual void setCntrLNGestao(ILNVocabulario *) = 0;
+
+  // M�todo destrutor virtual.
+
+  virtual ~IUVocabulario() {}
+};
+
+// Declara��o de interface para servi�o de autentica��o na camada de servi�o.
+
+class ILNVocabulario
+{
+public:
+  // M�todo por meio do qual � solicitado servi�o.
+
+  virtual ResultadoVocabulario criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
+
+  // M�todo destrutor virtual.
+
+  virtual ~ILNVocabulario() {}
 };
 
 #endif // INTERFACES_H_INCLUDED

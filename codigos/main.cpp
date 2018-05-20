@@ -61,7 +61,9 @@ int main()
                 // Critica o resultado da autentica��o.
 
                 if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) {
-                    break;
+                    try{
+                        // resultadoV = cntrIUVocabulario->;
+                    }
                 }
             }
 
