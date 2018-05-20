@@ -17,8 +17,8 @@ int main()
 
     int escolha = 0;
 
-    cout << "1 - Autentiacar" << endl;
-    cout << "2 - Gestão" << endl;
+    cout << "1 - Autenticar" << endl;
+    cout << "2 - Gestao" << endl;
 
     cin >> escolha;
 
@@ -29,7 +29,7 @@ int main()
     // Liga��o entre controladora na camada de apresenta��o e stub.
 
     // Instancia as controladoras.
-    
+
     switch (escolha)
     {
         case 1:{
