@@ -50,31 +50,29 @@ class   ILNAutenticacao
 
 class ILNGestao;
 
-
 /** Interface de Gestao de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a gestao de usuario/contas. 
  * Tais metodos sao implementados pelo Modulo responsavel e basicamente fazem chegagem de Formato dos dados fornecidos.
  */
 class IUGestao
 {
-  public:
-   
-/** Metodo Abstrato criarLeitor. Da inicio a criacao de um usuario Leitor e faz validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao. */
-    virtual ResultadoGestao criarLeitor() throw(runtime_error) = 0;
+public:
+  /** Metodo Abstrato criarLeitor. Da inicio a criacao de um usuario Leitor e faz validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao. */
+  virtual ResultadoGestao criarLeitor() throw(runtime_error) = 0;
 
-/** Metodo Abstrato criarDesenvolvedor. Da inicio a criacao de um usuario Desenvolvedor e faz validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao.*/
-    virtual ResultadoGestao criarDesenvolvedor() throw(runtime_error) = 0;
+  /** Metodo Abstrato criarDesenvolvedor. Da inicio a criacao de um usuario Desenvolvedor e faz validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao.*/
+  virtual ResultadoGestao criarDesenvolvedor() throw(runtime_error) = 0;
 
-/** Metodo Abstrato criar Administrador. Da inicio a criacao de um usuario Administrador e faz a validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao.*/
-    virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
+  /** Metodo Abstrato criar Administrador. Da inicio a criacao de um usuario Administrador e faz a validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao.*/
+  virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
 
-/** Metodo Abstrato apagarUsuario. Apaga conta de usuario independente do tipo. Implementada pelo modulo CtrlIUGestao.*/   
-    virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
-    
-/** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
-    virtual void setCntrLNGestao(ILNGestao *) = 0;
+  /** Metodo Abstrato apagarUsuario. Apaga conta de usuario independente do tipo. Implementada pelo modulo CtrlIUGestao.*/
+  virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
 
-/** Metodo Destrutor Virtual.*/
-    virtual ~IUGestao() {}
+  /** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
+  virtual void setCntrLNGestao(ILNGestao *) = 0;
+
+  /** Metodo Destrutor Virtual.*/
+  virtual ~IUGestao() {}
 };
 
 /**
@@ -82,22 +80,54 @@ class IUGestao
  */
 class ILNGestao
 {
-  public:
-   
-/** Metodo Abstrato criarLeitor. Cria o usuario Leitor apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
-    virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
+public:
+  /** Metodo Abstrato criarLeitor. Cria o usuario Leitor apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
+  virtual ResultadoGestao criarLeitor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &) throw(runtime_error) = 0;
 
-/** Metodo Abstrato criarDesenvolvedor. Cria o usuario Desenvolvedor apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
-    virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
+  /** Metodo Abstrato criarDesenvolvedor. Cria o usuario Desenvolvedor apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
+  virtual ResultadoGestao criarDesenvolvedor(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &) throw(runtime_error) = 0;
 
-/** Metodo Abstrato criarAdministrador. Cria o usuario Administrador apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
-    virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
+  /** Metodo Abstrato criarAdministrador. Cria o usuario Administrador apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
+  virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
 
-/** Metodo Abstrato apagarUsuario. Apaga conta de usuario. Implementada pelo modulo de Servico (Stub). */
-    virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
+  /** Metodo Abstrato apagarUsuario. Apaga conta de usuario. Implementada pelo modulo de Servico (Stub). */
+  virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
 
-/** Metodo Destrutor Virtual.*/
-    virtual ~ILNGestao() {}
+  /** Metodo Destrutor Virtual.*/
+  virtual ~ILNGestao() {}
+};
+
+class ILNVocabulario;
+
+/** Interface de Vocabulario de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a vocabulario de usuario/contas. 
+ * Tais metodos sao implementados pelo Modulo responsavel e basicamente fazem chegagem de Formato dos dados fornecidos.
+ */
+class IUVocabulario
+{
+public:
+  
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user);
+  virtual ResultadoVocabulario menuDesenvolvedor();
+  virtual ResultadoVocabulario menuAdministrador();
+
+
+  /** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
+  virtual void setCntrLNVocabulario(ILNVocabulario *) = 0;
+
+  /** Metodo Destrutor Virtual.*/
+  virtual ~IUVocabulario() {}
+};
+
+/**
+ * Interface de Vocabulario de Usuario na camada de Servico. Contem metodos abtratos para fazer vocabulario de usuario a nivel de Modulo de Servico (Stub).
+ */
+class ILNVocabulario
+{
+public:
+  
+
+  /** Metodo Destrutor Virtual.*/
+  virtual ~ILNVocabulario() {}
 };
 
 #endif // INTERFACES_H_INCLUDED

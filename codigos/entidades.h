@@ -18,6 +18,7 @@ class Resultado
 
 	const static int SUCESSO = 0; /** Constante para cenario de SUCESSO.*/
 	const static int FALHA = 1; /** Constante para cenario de FALHA. */
+	
 
 /** Metodo setValor.*/
 	void setValor(int valor)
@@ -36,21 +37,37 @@ class ResultadoAutenticacao : public Resultado
 {
 
   private:
- 
+
 	cCorreioEletronico email; /** Atributo Correio Eletrônico.*/
 
   public:
+	const static int LEITOR = 2;
+	const static int DESENVOLVEDOR = 3;
+	const static int ADMINISTRADOR = 4;
+	int tipoUsuario;
 
- /** Metodo setMail.*/
+	/** Metodo setMail.*/
 	void setMail(const cCorreioEletronico &email)
 	{ // passagem por referência.
 		this->email = email;
 	}
 
-/** Metodo getMail.*/
+	/** Metodo getMail.*/
 	cCorreioEletronico getMail() const
 	{
 		return email;
+	}
+
+	/** Metodo setSenha*/
+	void setSenha(const cSenha &senha)
+	{ // passagem por referência.
+		this->senha = senha;
+	}
+
+	/** Metodo getSenha.*/
+	cSenha getSenha() const
+	{
+		return senha;
 	}
 };
 
@@ -59,39 +76,66 @@ class ResultadoGestao : public Resultado
 {
 
   private:
-
 	cCorreioEletronico email; /** Atributo Email/Correio Eletronico.*/
+	cSenha senha; /** Atributo Senha.*/
 
   public:
-
-/** Metodo setMail*/
+	/** Metodo setMail*/
 	void setMail(const cCorreioEletronico &email)
 	{ // passagem por referência.
 		this->email = email;
 	}
 
-/** Metodo getMail.*/
+	/** Metodo getMail.*/
 	cCorreioEletronico getMail() const
 	{
 		return email;
 	}
+
+	/** Metodo setSenha*/
+	void setSenha(const cCorreioEletronico &email)
+	{ // passagem por referência.
+		this->senha = senha;
+	}
+
+	/** Metodo getSenha.*/
+	cSenha getSenha() const
+	{
+		return senha;
+	}
 };
 
+/** Entidade ResultadoVocabulario. */
 class ResultadoVocabulario : public Resultado
 {
 
   private:
-	cCorreioEletronico email;
+	cCorreioEletronico email; /** Atributo Email/Correio Eletronico.*/
+	cSenha senha;
 
   public:
+	/** Metodo setMail*/
 	void setMail(const cCorreioEletronico &email)
 	{ // passagem por referência.
 		this->email = email;
 	}
 
+	/** Metodo getMail.*/
 	cCorreioEletronico getMail() const
 	{
 		return email;
+	}
+
+	/** Metodo setSenha*/
+	void setSenha(const cCorreioEletronico &email)
+	{ // passagem por referência.
+		this->senha = senha;
+	}
+
+	/** Metodo getSenha.*/
+	cSenha getSenha() const
+	{
+		return senha;
 	}
 };
 

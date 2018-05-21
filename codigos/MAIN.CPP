@@ -49,7 +49,6 @@ int main()
                 cout << endl << "Tela de apresentacao de sistema." << endl;
 
                 try{
-
                     // Ilustra soliciatacao de servi�o de autentica��o.
 
                     resultadoA = cntrIUAutenticacao->autenticar();
@@ -61,8 +60,36 @@ int main()
                 // Critica o resultado da autentica��o.
 
                 if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) {
+                    cout << "validado" << endl;
+                    IUVocabulario *cntrIUVocabulario = new CntrIUVocabulario();
+                    ILNVocabulario *stubLNVocabulario = new StubLNVocabulario();
+
+                    // Liga inst�ncia da controladora de interacao a inst�ncia do stub na camada de servi�o.
+
+                    cntrIUVocabulario->setCntrLNVocabulario(stubLNVocabulario);
+
+                    ResultadoVocabulario resultadoV;
                     try{
-                        // resultadoV = cntrIUVocabulario->;
+                        const int LEITOR = 2;
+                        const int DESENVOLVEDOR = 3;
+                        const int ADMINISTRADOR = 4;
+                        switch (resultadoA.tipoUsuario)
+                        {
+                            case LEITOR:
+                                resultadoV = cntrIUVocabulario->Menu(resultadoA);
+                                break;
+                        
+                            case DESENVOLVEDOR:
+                                
+                                break;
+                        
+                            case ADMINISTRADOR:
+                                
+                                break;
+                        
+                            default:
+                                break;
+                        }
                     }
                 }
             }

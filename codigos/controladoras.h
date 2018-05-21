@@ -62,4 +62,45 @@ void inline CntrIUGestao::setCntrLNGestao(ILNGestao *cntrLNGestao)
     this->cntrLNGestao = cntrLNGestao;
 }
 
+/** Controladora para Modulo de Vocabulario na camada de Aprensentacao. Incorpora e implementa os metodos abstratos da interface que oferece. */
+class CntrIUVocabulario : public IUVocabulario
+{
+
+  private:
+    /**Atributo link. Cria referencia para o servidor (Stub) */
+    ILNVocabulario *cntrLNVocabulario;
+    ResultadoAutenticacao user;
+
+    //leitor
+    void MostrarDados();
+    void AlterarDados();
+    void ApagarUsuario();
+    void Listar();
+    void DadsoVocab();
+    void ConsultarTermo();
+    void ConsultarDefinicao();
+
+    //desenvolvedor
+    void CadastrarDev();
+    void CriarVocab();
+    void ApagarVocab();
+    void EditarVocab();
+
+    //administrador
+    void EditarIdioma();
+
+  public:
+    ResultadoVocabulario Menu(ResultadoAutenticacao user) throw(runtime_error);
+    ResultadoVocabulario menuDesenvolvedor(ResultadoAutenticacao *user) throw(runtime_error);
+    ResultadoVocabulario menuAdministrador(ResultadoAutenticacao *user) throw(runtime_error);
+
+    /**Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub). */
+    void setCntrLNVocabulario(ILNVocabulario *);
+};
+
+void inline CntrIUVocabulario::setCntrLNVocabulario(ILNVocabulario *cntrLNVocabulario)
+{
+    this->cntrLNVocabulario = cntrLNVocabulario;
+}
+
 #endif // CONTROLADORAS_H_INCLUDED

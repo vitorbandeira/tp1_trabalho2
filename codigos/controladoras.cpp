@@ -46,6 +46,12 @@ ResultadoAutenticacao CntrIUAutenticacao::autenticar() throw(runtime_error)
     if (resultadoA.getValor() == ResultadoAutenticacao::FALHA)
         cout << endl
              << "Falha na autenticacao." << endl;
+    else if (resultadoA.getValor() == ResultadoAutenticacao::DESENVOLVEDOR)
+        resultadoA.tipoUsuario = resultadoA.DESENVOLVEDOR;
+    else if (resultadoA.getValor() == ResultadoAutenticacao::ADMINISTRADOR)
+        resultadoA.tipoUsuario = resultadoA.ADMINISTRADOR;
+    else
+        resultadoA.tipoUsuario = resultadoA.LEITOR;
 
     return resultadoA;
 }
@@ -230,45 +236,196 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
     return resultadoG;
 }
 
-ResultadoGestao CntrIUGestao::apagarUsuario() throw(runtime_error)
+ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user)
 {
-
-    ResultadoGestao resultadoG;
-    cCorreioEletronico email;
-    cSenha senha;
-    char entrada[20];
-
-    // Solicitar email, senha e tipo da conta.
-
-    while (true)
+    this->user = user;
+    cout << "O que deseja fazer?" << endl;
+    cout << "0 - Sair" << endl;
+    cout << "1 - Mostrar dados" << endl;
+    cout << "2 - Alterar dados" << endl;
+    cout << "3 - Apagar usuário" << endl;
+    cout << "4 - Listar vocabulários" << endl;
+    cout << "5 - Apresentar dados de vocabulário controlado" << endl;
+    cout << "6 - Consultar termo" << endl;
+    cout << "7 - Consultar definição de termo" << endl;
+    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
     {
-        try
+        cout << "8 - Cadastrar como desenvolvedor de vocabulário controlado" << endl;
+        cout << "9 - Criar definição de vocabulário" << endl;
+        cout << "10 - Apagar definição de vocabulário" << endl;
+        cout << "11 - Editar definição de vocabulário" << endl;
+        if (user.tipoUsuario == user.DESENVOLVEDOR)
         {
-            cout << "Digite o endereço de e-mail : ";
-            cin >> entrada;
-            email.setCorreioEletronico(entrada);
-            cout << "Digite a senha : ";
-            cin >> entrada;
-            senha.setSenha(entrada);
-
-            break;
-        }
-        catch (const invalid_argument &exp)
-        {
-            cout << endl
-                 << "Dado em formato incorreto." << endl;
+            cout << "12 - Editar idioma de vocabulário" << endl;
         }
     }
+    int escolha = 0;
+    cin >> escolha;
 
-    // Solicitar autentica��o.
+    switch (escolha)
+    {
+    case 0:
+        break;
+    case 1:
+        MostrarDados();
+        break;
+    case 2:
+        AlterarDados();
+        break;
+    case 3:
+        ApagarUsuario();
+        break;
+    case 4:
+        Listar();
+        break;
+    case 5:
+        DadsoVocab();
+        break;
+    case 6:
+        cout << "Nome do vocabulário : " << endl;
+        char str[20];
+        cin >> str;
+        ConsultarTermo();
+        break;
+    case 7:
+        cout << "Nome do vocabulário : " << endl;
+        char str[20];
+        cin >> str;
+        ConsultarDefinicao();
+        break;
+    default:
+        break;
+    }
+}
 
-    resultadoG = cntrLNGestao->apagarUsuario(email, senha);
+void CntrIUVocabulario::MostrarDados()
+{
+    cout << "Nome : " << algo << endl;
+    cout << "Sobrenome : " << algo << endl;
+    cout << "Senha : " << algo << endl;
+    cout << "E-mail : " << algo << endl;
+    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
+    {
+        cout << "Data de nascimento : " << algo << endl;
+        if (user.tipoUsuario == user.DESENVOLVEDOR)
+        {
+            cout << "Telefone : " << algo << endl;
+            cout << "Endereco : " << algo << endl;
+        }
+    }
+}
+void CntrIUVocabulario::AlterarDados()
+{
+    int escolha = 0;
+    while (!(0 < escolha && escolha < 4))
+    {
+        cout << "Qual campo deseja alterar?" << endl;
+        cout << "0 - Sair" << endl;
+        cout << "1 - Nome" << endl;
+        cout << "2 - sobrenome" << endl;
+        cout << "3 - Senha" << endl;
+        cout << "4 - E-mail" << endl;
+        if (user.tipoUsuario <= user.DESENVOLVEDOR)
+        {
+            cout << "5 - Data" << algo << endl;
+            if (user.tipoUsuario == user.DESENVOLVEDOR)
+            {
+                cout << "6 - Data de nascimento" << endl;
+                cout << "7 - Telefone" << endl;
+                cout << "8 - Endereco" << endl;
+            }
+        }
+        int escolha = -1;
+        cin >> escolha;
+        cout << "Novo valor : " << endl;
+        char str[20];
+        cin >> str;
 
-    // Informar resultado da autentica��o.
+        while (true)
+        {
+            switch (escolha)
+            {
+            case 0:
+                sair;
+                return;
+            case 1:
+                algo;
+                break;
+            case 2:
+                algo;
+                break;
+            case 3:
+                algo;
+                break;
+            case 4:
+                algo;
+                break;
+            case 5:
+                algo;
+                break;
+            case 6:
+                algo;
+                break;
+            case 7:
+                algo;
+                break;
+            case 8:
+                algo;
+                break;
 
-    if (resultadoG.getValor() == ResultadoAutenticacao::FALHA)
-        cout << endl
-             << "Falha na autenticacao." << endl;
-
-    return resultadoG;
+            default:
+                break;
+            }
+        }
+    }
+}
+void CntrIUVocabulario::ApagarUsuario()
+{
+    algo;
+    cout << "Usuário apagado" << endl;
+}
+void CntrIUVocabulario::Listar()
+{
+    algo;
+}
+void CntrIUVocabulario::DadsoVocab()
+{
+    cout << "Nome do vocabulário : " << endl;
+    char str[20];
+    cin >> str;
+    algo;
+}
+void CntrIUVocabulario::ConsultarTermo()
+{
+    cout << "Nome do vocabulário : " << endl;
+    char str[20];
+    cin >> str;
+    algo;
+}
+void CntrIUVocabulario::ConsultarDefinicao()
+{
+    cout << "Nome do vocabulário : " << endl;
+    char str[20];
+    cin >> str;
+    algo;
+}
+void CadastrarDev()
+{
+    algo;
+}
+void CriarVocab()
+{
+    algo;
+}
+void ApagarVocab()
+{
+    algo;
+}
+void EditarVocab()
+{
+    algo;
+}
+void EditarIdioma()
+{
+    algo;
 }

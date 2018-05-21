@@ -16,25 +16,34 @@ Uma vez criada uma conta, para acessar o sistema, o usuário deve informar o seu
 Leitor
 Para criar uma conta de leitor, o usuário deve informar nome, sobrenome, endereço de correioeletrônico e senha. 
 
-Os seguintes serviços estão disponíveis aos leitores: apresentar dados do usuário, editar dados do usuário,excluir conta, 
-listar nomes dos vocabulários controlados, apresentar dados de vocabulário controlado, consultar termo,consultar definição de termo. 
+Os seguintes serviços estão disponíveis aos leitores: 
+    apresentar dados do usuário, 
+    editar dados do usuário,
+    excluir conta, 
+    listar nomes dos vocabulários controlados, 
+    apresentar dados de vocabulário controlado, 
+    consultar termo,
+    consultar definição de termo. 
 
 
 Desenvolvedor
 Para criar uma conta de desenvolvedor, o usuário deve informar nome, sobrenome, data denascimento, endereço de correio eletrônico e senha.
 
 Além dos serviços disponíveis aos leitores, os seguintes serviços estãodisponíveis aos desenvolvedores: 
-cadastrar como desenvolvedor de vocabulário controlado; criar, excluir, editar termo edefinição de termo. 
+cadastrar como desenvolvedor de vocabulário controlado; 
+criar, excluir, editar termo e definição de termo. 
 
 
-Especificações dos temos
+Especificações dos vocabulário
 Cada desenvolvedor pode se cadastrar como desenvolvedor de quantos vocabulários controlados queira.
 
 Cada vocabulário controlado pode ter de zero a dez desenvolvedores. 
 
-Cada vocabulário controlado pode conter zero ou váriostermos. 
+Cada vocabulário controlado pode conter zero ou vários termos. 
 
-Cada termo pertence a um vocabulário controlado. Quando um termo é criado, o desenvolvedor deve informar nomedo termo, classe do termo e data. 
+
+Termos
+Cada termo pertence a um vocabulário controlado. Quando um termo é criado, o desenvolvedor deve informar nome do termo, classe do termo e data. 
 
 Cada termo pode ter de zero a cinco definições. Quando de uma definição, o desenvolvedordeve informar o texto da definição e data. 
 
@@ -46,13 +55,17 @@ Quando mais de um termo está associado a uma definição, um é o preferido e o
 
 
 Admininstrador
-Paracriar uma conta de administrador, o usuário deve informar: 
+Para criar uma conta de administrador, o usuário deve informar: 
 nome, sobrenome, telefone, data de nascimento, endereço, endereçode correio eletrônico e senha. 
 
-Um admininstrador pode criar quantos vocabulários controlados queira. Quando um vocabuláriocontrolado é criado, o administrador deve informar: 
+Um admininstrador pode criar quantos vocabulários controlados queira. 
+Quando um vocabulário controlado é criado, o administrador deve informar: 
 nome do vocabulário controlado, texto de definição, idioma e data. 
 
-Ao serexcluída a conta de um administrador, são excluídos os dados dos vocabulários administrados, 
-os termos do vocabuláriocontrolado e as definições apropriadas. 
+Ao ser excluída a conta de um administrador, 
+são excluídos os dados dos vocabulários administrados, os termos do vocabulário controlado e as definições apropriadas. 
 
-Além dos serviços anteriormente listados, os seguintes serviços estão disponíveis paraos administradores: editar definição de vocabulário controlado, alterar idioma de vocabulário controlado, excluir vocabuláriocontrolado.
+Além dos serviços anteriormente listados, os seguintes serviços estão disponíveis paraos administradores: 
+editar definição de vocabulário controlado, 
+alterar idioma de vocabulário controlado, 
+excluir vocabulário controlado.
