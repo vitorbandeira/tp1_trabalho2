@@ -76,13 +76,7 @@ class StubLNVocabulario : public ILNVocabulario
     private:
         ResultadoAutenticacao user;
 
-        string MostrarNome();
-        string MostrarSobreome();
-        string MostrarSenha();
-        string MostrarEmail();
-        string MostrarData();
-        string MostrarEndereco();
-        string MostrarTelefone();
+        void MostrarDados();
         void AlterarDados();
         void ApagarUsuario();
         void Listar();

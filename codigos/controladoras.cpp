@@ -241,6 +241,7 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
 
 ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(runtime_error)
 {
+    
     //this->user = user;
     cout << "O que deseja fazer?" << endl;
     cout << "0 - Sair" << endl;
@@ -302,19 +303,7 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(r
 
 void CntrIUVocabulario::MostrarDados()
 {
-    cout << "Nome : " << MostrarNome() << endl;
-    cout << "Sobrenome : " << MostrarSobreome() << endl;
-    cout << "Senha : " << MostrarSenha() << endl;
-    cout << "E-mail : " << MostrarEmail() << endl;
-    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
-    {
-        cout << "Data de nascimento : " << MostrarData() << endl;
-        if (user.tipoUsuario == user.DESENVOLVEDOR)
-        {
-            cout << "Telefone : " << MostrarTelefone() << endl;
-            cout << "Endereco : " << MostrarEndereco() << endl;
-        }
-    }
+    MostrarDados();
 }
 void CntrIUVocabulario::AlterarDados()
 {

@@ -18,15 +18,15 @@ class ILNAutenticacao;
 class IUAutenticacao
 {
   public:
-    
+
 /**Metodo Abstrato Autenticar. E chamado para fazer o papel da autenticação de FORMATO e pode lançar excecao. */
     virtual ResultadoAutenticacao autenticar() throw(runtime_error) = 0;
 
-    
+
 /**Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico. */
     virtual void setCntrLNAutenticacao(ILNAutenticacao *) = 0;
 
-    
+
 /**Metodo Destrutor virtual. */
     virtual ~IUAutenticacao() {}
 };
@@ -38,7 +38,7 @@ class IUAutenticacao
 class   ILNAutenticacao
 {
   public:
-    
+
 /**Metodo Abstrato Autenticar. E chamado para fazer o papel da autenticação e pode lançar excecao. Recebe um email e senha de usuario. */
     virtual ResultadoAutenticacao autenticar(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
 
@@ -50,7 +50,7 @@ class   ILNAutenticacao
 
 class ILNGestao;
 
-/** Interface de Gestao de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a gestao de usuario/contas. 
+/** Interface de Gestao de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a gestao de usuario/contas.
  * Tais metodos sao implementados pelo Modulo responsavel e basicamente fazem chegagem de Formato dos dados fornecidos.
  */
 class IUGestao
@@ -99,7 +99,7 @@ public:
 
 class ILNVocabulario;
 
-/** Interface de Vocabulario de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a vocabulario de usuario/contas. 
+/** Interface de Vocabulario de Usuario na camada de Apresentacao. Contem metodos abstratos para dar inicio a vocabulario de usuario/contas.
  * Tais metodos sao implementados pelo Modulo responsavel e basicamente fazem chegagem de Formato dos dados fornecidos.
  */
 class IUVocabulario
@@ -111,27 +111,22 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
-  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) = 0;
+  virtual ResultadoVocabulario Menu() throw(runtime_error) = 0;
 
-  virtual string MostrarNome() = 0;
-  virtual string MostrarSobreome() = 0;
-  virtual string MostrarSenha() = 0;
-  virtual string MostrarEmail() = 0;
-  virtual string MostrarData() = 0;
-  virtual string MostrarEndereco() = 0;
-  virtual string MostrarTelefone() = 0;
+  virtual void MostrarDados() = 0;
   virtual void AlterarDados() = 0;
   virtual void ApagarUsuario() = 0;
   virtual void Listar() = 0;
-  virtual void DadsoVocab(string str) = 0;
-  virtual void ConsultarTermo(string str) = 0;
-  virtual void ConsultarDefinicao(string str) = 0;
+  virtual void DadsoVocab(const string &str) = 0;
+  virtual void ConsultarTermo(const string &str) = 0;
+  virtual void ConsultarDefinicao(const string &str) = 0;
 
   //desenvolvedor
   virtual void CadastrarDev() = 0;
   virtual void CriarVocab() = 0;
   virtual void ApagarVocab() = 0;
   virtual void EditarVocab() = 0;
+
   //administrador
   virtual void EditarIdioma() = 0;
 };
@@ -141,8 +136,26 @@ public:
  */
 class ILNVocabulario
 {
+private:
+  virtual void MostrarDados() = 0;
+  virtual void AlterarDados() = 0;
+  virtual void ApagarUsuario() = 0;
+  virtual void Listar() = 0;
+  virtual void DadsoVocab(const string &str) = 0;
+  virtual void ConsultarTermo(const string &str) = 0;
+  virtual void ConsultarDefinicao(const string &str) = 0;
+
+  //desenvolvedor
+  virtual void CadastrarDev() = 0;
+  virtual void CriarVocab() = 0;
+  virtual void ApagarVocab() = 0;
+  virtual void EditarVocab() = 0;
+
+  //administrador
+  virtual void EditarIdioma() = 0;
+
 public:
-  
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) = 0;
 
   /** Metodo Destrutor Virtual.*/
   virtual ~ILNVocabulario() {}

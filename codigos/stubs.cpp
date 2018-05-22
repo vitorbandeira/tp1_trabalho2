@@ -136,39 +136,29 @@ ResultadoGestao StubLNGestao::apagarUsuario(const cCorreioEletronico &mail, cons
 ResultadoVocabulario StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
     this->user = user;
 }
-string StubLNVocabulario::MostrarNome()
+
+void StubLNVocabulario::MostrarDados()
 {
-    string str = "Abextado";
-    return str;
+    cout << "Nome : "
+         << "Abextado" << endl;
+    cout << "Sobrenome : "
+         << "Ronaldinho" << endl;
+    cout << "Senha : " << user.getSenha().getSenha().c_str() << endl;
+    cout << "E-mail : " << user.getMail().getCorreioEletronico().c_str() << endl;
+    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
+    {
+        cout << "Data de nascimento : "
+             << "29/02/2016" << endl;
+        if (user.tipoUsuario == user.DESENVOLVEDOR)
+        {
+            cout << "Telefone : "
+                 << "61 98765-4321" << endl;
+            cout << "Endereco : "
+                 << "Buraco das Araras" << endl;
+        }
+    }
 }
-string StubLNVocabulario::MostrarSobreome()
-{
-    string str = "Ronaldinho";
-    return str;
-}
-string StubLNVocabulario::MostrarSenha()
-{
-    return user.getSenha().getSenha();
-}
-string StubLNVocabulario::MostrarEmail()
-{
-    return user.getMail().getCorreioEletronico();
-}
-string StubLNVocabulario::MostrarData()
-{
-    string str = "29/02/2016";
-    return str;
-}
-string StubLNVocabulario::MostrarEndereco()
-{
-    string str = "Buraco das Araras";
-    return str;
-}
-string StubLNVocabulario::MostrarTelefone()
-{
-    string str = "61 98765-4321";
-    return str;
-}
+
 void StubLNVocabulario::AlterarDados()
 {
     cout << "Dados alterados com sucesso" << endl;
