@@ -18,19 +18,22 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &m
     else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
         throw runtime_error("Erro de sistema");
     else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_DESENVOLVEDOR.c_str()) == 0){
-        resultado.tipoUsuario = resultado.DESENVOLVEDOR;
+        cout << "Desenvolvedor logado" << endl;
+        resultado.setUser(ResultadoAutenticacao::DESENVOLVEDOR);
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
         resultado.setMail(mail);
         resultado.setSenha(senha);
     }
     else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ADMINISTRADOR.c_str()) == 0){
-        resultado.tipoUsuario = resultado.ADMINISTRADOR;
+        cout << "Administrador logado" << endl;
+        resultado.setUser(resultado.ADMINISTRADOR);
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
         resultado.setMail(mail);
         resultado.setSenha(senha);
     }
     else{
-        resultado.tipoUsuario = resultado.LEITOR;
+        cout << "Leitor logado" << endl;
+            resultado.setUser(resultado.LEITOR);
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
         resultado.setMail(mail);
         resultado.setSenha(senha);
@@ -113,8 +116,7 @@ ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &ma
 }
 
 void StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
-    this->user = user;/*Problema*/
-    cout << "Cheguei aqui" << endl;
+    this->user = user;
 }
 
 void StubLNVocabulario::MostrarDados() throw(runtime_error)
@@ -125,12 +127,12 @@ void StubLNVocabulario::MostrarDados() throw(runtime_error)
          << "Ronaldinho" << endl;
     cout << "Senha : " << user.getSenha().getSenha().c_str() << endl;
     cout << "E-mail : " << user.getMail().getCorreioEletronico().c_str() << endl;
-    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
+    if (user.getUser() == user.DESENVOLVEDOR || user.getUser() == user.ADMINISTRADOR)
     {
 
         cout << "Data de nascimento : "
              << "29/02/2016" << endl;
-        if (user.tipoUsuario == user.DESENVOLVEDOR)
+        if (user.getUser() == user.DESENVOLVEDOR)
         {
             cout << "Telefone : "
                  << "61 98765-4321" << endl;
@@ -146,7 +148,7 @@ void StubLNVocabulario::AlterarDados()
 }
 void StubLNVocabulario::ApagarUsuario()
 {
-    cout << "Usuário apagado com sucesso" << endl;
+    cout << endl << "Usuário apagado com sucesso" << endl;
 }
 void StubLNVocabulario::Listar()
 {
@@ -197,19 +199,19 @@ void StubLNVocabulario::ConsultarTermo(const string &str)
 {
     if (strcmp(str.c_str(), "Ganhar") == 0)
     {
-        cout << "Vitoria : " << endl;
+        cout << "Ganhar : " << endl;
         cout << "Termo não preferido" << endl;
         cout << "Definições : " << "1" << endl;
     }
     else if (strcmp(str.c_str(), "Vencer") == 0)
     {
-        cout << "Vitoria : " << endl;
+        cout << "Vencer : " << endl;
         cout << "Termo não preferido" << endl;
         cout << "Definições : " << "1" << endl;
     }
     else if (strcmp(str.c_str(), "Triunfar") == 0)
     {
-        cout << "Vitoria : " << endl;
+        cout << "Triunfar : " << endl;
         cout << "Termo não preferido" << endl;
         cout << "Definições : " << "1" << endl;
     }
@@ -264,28 +266,19 @@ void StubLNVocabulario::ConsultarDefinicao(const string &str)
 {
     if (strcmp(str.c_str(), "Ganhar") == 0)
     {
-        cout << "Vitoria : " << endl;
-        cout << "Termo não preferido" << endl;
-        cout << "Definições : "
-             << "1" << endl;
+        cout << "Ganhar : ";
+        cout << "Oposto de perder" << endl;
     }
     else if (strcmp(str.c_str(), "Vencer") == 0)
     {
-        cout << "Vitoria : " << endl;
-        cout << "Termo não preferido" << endl;
-        cout << "Definições : "
-             << "1" << endl;
+        cout << "Vencer : " << endl;
+        cout << "Oposto de perder" << endl;
     }
     else if (strcmp(str.c_str(), "Triunfar") == 0)
     {
-        cout << "Vitoria : " << endl;
-        cout << "Termo não preferido" << endl;
-        cout << "Definições : "
-             << "1" << endl;
+        cout << "Triunfar : " << endl;
+        cout << "Oposto de perder" << endl;
     }
-
-
-
 
     else if (strcmp(str.c_str(), "Manga") == 0)
     {
@@ -317,7 +310,7 @@ void StubLNVocabulario::ConsultarDefinicao(const string &str)
         cout << "Derrota : " << endl;
         cout << "Reprovar nessa matéria." << endl;
     }
-    else if (strcmp(str.c_str(), "Derrota") == 0)
+    else if (strcmp(str.c_str(), "Empate") == 0)
     {
         cout << "Empate : " << endl;
         cout << "Quando uma competição acaba sem ganhador nem perdedor." << endl;
@@ -351,10 +344,24 @@ void StubLNVocabulario::ApagarVocab()
 }
 void StubLNVocabulario::EditarVocab()
 {
+    cVocabControlado vocab;
+    char entrada[20];
+    cout << "Nome  do vocabulário : " << endl;
+    cin >> entrada;
+    vocab.setNome(entrada);
+    cout << "Data de criação : " << endl;
+    cin >> entrada;
     cout << "Dados alterados com sucesso" << endl;
 }
 //administrador
 void StubLNVocabulario::EditarIdioma()
 {
+    cVocabControlado vocab;
+    char entrada[20];
+    cout << "Nome vocabulário : " << endl;
+    cin >> entrada;
+    cout << "Novo idioma" << endl;
+    cin >> entrada;
+
     cout << "Idioma alterados com sucesso" << endl;
 }

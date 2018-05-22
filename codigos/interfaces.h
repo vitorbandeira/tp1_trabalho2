@@ -105,7 +105,7 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
-  virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
 
   virtual void MostrarDados() = 0;
   virtual void AlterarDados() = 0;
