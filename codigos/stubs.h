@@ -73,13 +73,13 @@ class StubLNVocabulario : public ILNVocabulario
     private:
         ResultadoAutenticacao user;
 
-        void MostrarDados();
+        void MostrarDados() throw(runtime_error);
         void AlterarDados();
         void ApagarUsuario();
         void Listar();
-        void DadosVocab(string str);
-        void ConsultarTermo(string str);
-        void ConsultarDefinicao(string str);
+        void DadosVocab(const string &str);
+        void ConsultarTermo(const string &str);
+        void ConsultarDefinicao(const string &str);
 
         //desenvolvedor
         void CadastrarDev();
@@ -90,8 +90,8 @@ class StubLNVocabulario : public ILNVocabulario
         //administrador
         void EditarIdioma();
 
+        void Menu(const ResultadoAutenticacao &user) throw(runtime_error);
      public:
         /** Metodo de Vocabulario da Interface da camada de servico.*/
-        ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error);
 };
 #endif // STUBS_H_INCLUDED

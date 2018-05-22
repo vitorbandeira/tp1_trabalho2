@@ -60,9 +60,10 @@ int main()
 
                 // Critica o resultado da autentica��o.
 
-                if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) 
+                if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO)
                 {
-                    cout << "validado" << endl;
+                    cout << "email: " << resultadoA.getMail().getCorreioEletronico().c_str() << endl
+                    << "senha: " << resultadoA.getSenha().getSenha().c_str() << endl;
                     IUVocabulario *cntrIUVocabulario = new CntrIUVocabulario();
                     ILNVocabulario *stubLNVocabulario = new StubLNVocabulario();
 
@@ -70,26 +71,24 @@ int main()
 
                     cntrIUVocabulario->setCntrLNVocabulario(stubLNVocabulario);
 
-
-                    bool continuar = false;
+                    ResultadoVocabulario resultadoV;
+                    char ch = 'n';
                     do{
-                        ResultadoVocabulario resultadoV;
                         try
                         {
-                            resultadoV = cntrIUVocabulario->Menu(resultadoA);
+                            // cout << "Cheguei aqui" << endl;
+                            cntrIUVocabulario->Menu(resultadoA);
+
+
                         }
-                        catch (const runtime_error &exp)
+                        catch (const runtime_error)
                         {
                             cout << "Erro de sistema." << endl;
                         }
                         cout << "Realizar outra operação?" << endl;
                         cout << "s/n" << endl;
-                        char ch = 'n';
-                        if(ch == 's')
-                            continuar = true;
-                        else
-                            continuar = false;
-                    }while(continuar);
+                        cin >> ch;
+                    }while(ch == 's');
                 }
             }
 
@@ -121,8 +120,7 @@ int main()
                         cout << "1 - Leitor"        << endl;
                         cout << "2 - Desenvolvedor" << endl;
                         cout << "3 - Administrador" << endl;
-                        cout << "4 - Apagar usuário" << endl;
-                        cout << "5 - Sair"          << endl;
+                        cout << "4 - Sair"          << endl;
                         escolha = 0;
                         cin >> escolha;
                         switch (escolha)
@@ -140,10 +138,6 @@ int main()
                             controle = false;
                             break;
                         case 4:
-                            resultadoG = cntrIUGestao->apagarUsuario();
-                            controle = false;
-                            break;
-                        case 5:
                             return 1;
                         default:
                             controle = true;

@@ -239,10 +239,11 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
     return resultadoG;
 }
 
-ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(runtime_error)
+void CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error)
 {
+    this->user = user;
     
-    //this->user = user;
+    ResultadoVocabulario resultadoV;
     cout << "O que deseja fazer?" << endl;
     cout << "0 - Sair" << endl;
     cout << "1 - Mostrar dados" << endl;
@@ -272,31 +273,35 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(r
     case 0:
         break;
     case 1:
-        MostrarDados();
+        cntrLNVocabulario->MostrarDados();
         break;
     case 2:
         AlterarDados();
         break;
     case 3:
-        ApagarUsuario();
+        cntrLNVocabulario->ApagarUsuario();
         break;
     case 4:
-        Listar();
+        cntrLNVocabulario->Listar();
         break;
     case 5:
-        DadosVocab();
+        cout << "Nome do vocabulário : " << endl;
+        char str[20];
+        cin >> str;
+        cntrLNVocabulario->DadosVocab(str);
         break;
     case 6:
         cout << "Nome do vocabulário : " << endl;
         cin >> str;
-        ConsultarTermo();
+        cntrLNVocabulario->ConsultarTermo(str);
         break;
     case 7:
         cout << "Nome do vocabulário : " << endl;
         cin >> str;
-        ConsultarDefinicao();
+        cntrLNVocabulario->ConsultarDefinicao(str);
         break;
     default:
+        cout << "cheguei aqui\n";
         break;
     }
 }

@@ -112,20 +112,22 @@ ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &ma
     return resultado;
 }
 
-ResultadoVocabulario StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
-    this->user = user;
+void StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
+    this->user = user;/*Problema*/
+    cout << "Cheguei aqui" << endl;
 }
 
-void StubLNVocabulario::MostrarDados()
+void StubLNVocabulario::MostrarDados() throw(runtime_error)
 {
     cout << "Nome : "
-         << "Abextado" << endl;
+         << "Haroudo" << endl;
     cout << "Sobrenome : "
          << "Ronaldinho" << endl;
     cout << "Senha : " << user.getSenha().getSenha().c_str() << endl;
     cout << "E-mail : " << user.getMail().getCorreioEletronico().c_str() << endl;
     if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
     {
+
         cout << "Data de nascimento : "
              << "29/02/2016" << endl;
         if (user.tipoUsuario == user.DESENVOLVEDOR)
@@ -153,7 +155,7 @@ void StubLNVocabulario::Listar()
     cout << "BBBB" << endl;
     cout << "CCCC" << endl;
 }
-void StubLNVocabulario::DadosVocab(string str)
+void StubLNVocabulario::DadosVocab(const string &str)
 {
     if(strcmp(str.c_str(), "AAAA") == 0)
     {
@@ -191,7 +193,7 @@ void StubLNVocabulario::DadosVocab(string str)
     else
         cout << "Vocabulário não encontrado" << endl;
 }
-void StubLNVocabulario::ConsultarTermo(string str)
+void StubLNVocabulario::ConsultarTermo(const string &str)
 {
     if (strcmp(str.c_str(), "Ganhar") == 0)
     {
@@ -258,7 +260,7 @@ void StubLNVocabulario::ConsultarTermo(string str)
     else
         cout << "Termo não encontrado" << endl;
 }
-void StubLNVocabulario::ConsultarDefinicao(string str)
+void StubLNVocabulario::ConsultarDefinicao(const string &str)
 {
     if (strcmp(str.c_str(), "Ganhar") == 0)
     {
@@ -305,8 +307,6 @@ void StubLNVocabulario::ConsultarDefinicao(string str)
     }
 
 
-
-
     else if (strcmp(str.c_str(), "Vitoria") == 0)
     {
         cout << "Vitoria : " << endl;
@@ -327,11 +327,11 @@ void StubLNVocabulario::ConsultarDefinicao(string str)
 }
 
 //desenvolvedor
-void CadastrarDev()
+void StubLNVocabulario::CadastrarDev()
 {
     cout << "Desenvolvedor cadastrdo com sucesso" << endl;
 }
-void CriarVocab()
+void StubLNVocabulario::CriarVocab()
 {
     cVocabControlado  vocab;
     char entrada[20];
@@ -345,16 +345,16 @@ void CriarVocab()
     cin >> entrada;
     vocab.setData(entrada);
 }
-void ApagarVocab()
+void StubLNVocabulario::ApagarVocab()
 {
     cout << "Vocabulario apagado" << endl;
 }
-void EditarVocab()
+void StubLNVocabulario::EditarVocab()
 {
     cout << "Dados alterados com sucesso" << endl;
 }
 //administrador
-void EditarIdioma()
+void StubLNVocabulario::EditarIdioma()
 {
     cout << "Idioma alterados com sucesso" << endl;
 }

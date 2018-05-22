@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <string>
 #include "dominios.h"
 
 using namespace std;

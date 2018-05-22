@@ -90,7 +90,7 @@ protected:
     void EditarIdioma();
 
   public:
-    ResultadoVocabulario Menu(ResultadoAutenticacao user) throw(runtime_error);
+    void Menu(const ResultadoAutenticacao &user) throw(runtime_error);
 
     /**Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub). */
     void setCntrLNVocabulario(ILNVocabulario *);
