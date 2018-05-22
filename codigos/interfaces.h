@@ -105,48 +105,73 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
-  virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
 
+  /** Metodo Virtual Abstrato Menu. Apresenta novas opcoes ao usuario caso ele tenha sido autenticado com sucesso. Implementado por CtrlIUVocabulario.*/
+  virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
+  /** Metodo Virtual Abstrato MostrarDados. */
   virtual void MostrarDados() = 0;
+  /** Metodo Virtual Abstrato AlterarDados. Oferece ao usuario opcoes referentes a alteracao de dados quaisquer de conta. Implementada por CtrlIUVocabulario.*/
   virtual void AlterarDados() = 0;
+  /** Metodo Virtual Abstrato ApagarUsuario. Simula a delecao de um usuario e e implementada por CtrlIUVocabulario. */
   virtual void ApagarUsuario() = 0;
+  /** Metodo Virtual Abstrato Listar. Lista vocabularios existentes. Implementada por CtrlIUVocabulario.*/
   virtual void Listar() = 0;
+  /** Metodo Virtual Abstrato DadosVocabulario. Busca dados de um vocabulario existente fornecido pelo usuario. Implementada por CtrlIUVocabulario.*/
   virtual void DadosVocab() = 0;
+  /** Metodo Virtual Abstrato ConsultarTermo. Consulta um termo fornecido pelo usuario. Implementado por CtrlIUVocabulario.*/
   virtual void ConsultarTermo() = 0;
+  /** Metodo Virtual Abstrato ConsultarDefinicao. Consulta a definicao de um vocabulario fornecido pelo usuario. Implementado por CtrlIUVocabulario.*/
   virtual void ConsultarDefinicao() = 0;
 
   //desenvolvedor
+  /** Metodo Virtual Abstrato CadastrarDev. Simula o cadastro de um desenvolvedor. Implementado por CtrlIUVocabulario*/
   virtual void CadastrarDev() = 0;
+  /** Metodo Virtual Abstrato CriarVocabulario. Faz a tentativa de criar vocabulario conforme queira o usuario. Faz validacao de formato dos atributos de um Vocabulario (Nome, idioma e data). Implementado por CtrlIUVocabulario*/
   virtual void CriarVocab() = 0;
+  /** Metodo Virtual Abstrato ApagarVocabulario. Apenas simula a delecao de um vocabulario. Implementado por CtrlIUVocabulario*/
   virtual void ApagarVocab() = 0;
+  /** Metodo Virtual Abstrato EditarVocabulario. Simula a edicao de um vacabulario. Implementado por CtrlIUVocabulario*/
   virtual void EditarVocab() = 0;
 
   //administrador
+  /** Metodo Virtual Abstrato EditarIdioma. Simula a edicao de um vocabulario. Implementado por CtrlIUVocabulario*/
   virtual void EditarIdioma() = 0;
 };
 
 /**
- * Interface de Vocabulario de Usuario na camada de Servico. Contem metodos abtratos para fazer vocabulario de usuario a nivel de Modulo de Servico (Stub).
+ * Interface de Vocabulario de Usuario na camada de Servico. Contem metodos abstratos para fazer gestao de vocabulario a nivel de Modulo de Servico (Stub).
  */
 class ILNVocabulario
 {
 public:
+  /** Metodo Virtual Abstrato Menu. Implementado por CtrlIUVocabulario.*/
   virtual void Menu(const ResultadoAutenticacao &user) = 0;
   virtual void MostrarDados() throw(runtime_error) = 0;
+  /** Metodo Virtual Abstrato AlterarDados. Simula a alteracao de dados pelo Stub correspondente (StubLNVocabulario).*/
   virtual void AlterarDados() = 0;
+  /** Metodo Virtual Abstrato ApagarUsuario. Simula a delecao de um usuario pelo Stub correspondente (StubLNVocabulario).*/  
   virtual void ApagarUsuario() = 0;
+  /** Metodo Virtual Abstrato Listar. Simula a listagem de alguns vocabularios "existentes".*/
   virtual void Listar() = 0;
+  /** Metodo Virtual Abstrato DadosVocabulario. Simula dados de um vocabulario fornecido para pesquisa pelo usuario. Implementado por StubLNVocabulario.*/
   virtual void DadosVocab(const string &str) = 0;
+  /** Metodo Virtual Abstrato ConsultarTermo. Simula a consulta de um termo fornecido pelo usuario. Implementado por StubLNVocabulario.*/
   virtual void ConsultarTermo(const string &str) = 0;
+  /** Metodo Virtual Abstrato ConsultarTermo. Simula a consulta da definicao de um termo fornecido pelo usuario. Implementado por StubLNVocabulario.*/
   virtual void ConsultarDefinicao(const string &str) = 0;
 
   //desenvolvedor
+  /** Metodo Virtual Abstrato CadastrarDev. Simula o cadastro de um Desenvolvedor.*/
   virtual void CadastrarDev() = 0;
+  /** Metodo Virtual Abstrato CriarVocabulario. Simula a criacao de vocabulario pelo desenvolvedor.*/
   virtual void CriarVocab() = 0;
+  /** Metodo Virtual Abstrato ApagarVocabulario. Simula a delecao de vocabulario pelo desenvolvedor.*/
   virtual void ApagarVocab() = 0;
+  /** Metodo Virtual Abstrato EditarVocabulario. Simula a edicao de um vocabulario pelo desenvolvedor*/
   virtual void EditarVocab() = 0;
 
   //administrador
+  /** Metodo Virtual Abstrato EditarIdioma.*/
   virtual void EditarIdioma() = 0;
 
   /** Metodo Destrutor Virtual.*/

@@ -317,7 +317,7 @@ void CntrIUVocabulario::AlterarDados()
     {
         cout << "Qual campo deseja alterar?" << endl;
         cout << "1 - Nome" << endl;
-        cout << "2 - sobrenome" << endl;
+        cout << "2 - Sobrenome" << endl;
         cout << "3 - Senha" << endl;
         cout << "4 - E-mail" << endl;
         if (user.tipoUsuario <= user.DESENVOLVEDOR)

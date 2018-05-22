@@ -329,7 +329,7 @@ void StubLNVocabulario::ConsultarDefinicao(const string &str)
 //desenvolvedor
 void StubLNVocabulario::CadastrarDev()
 {
-    cout << "Desenvolvedor cadastrdo com sucesso" << endl;
+    cout << "Desenvolvedor cadastrado com sucesso" << endl;
 }
 void StubLNVocabulario::CriarVocab()
 {
