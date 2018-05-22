@@ -52,10 +52,10 @@ ResultadoGestao StubLNGestao::criarLeitor(const cCorreioEletronico &mail, const 
     return resultado;
 }
 
-ResultadoGestao StubLNGestao::criarDesenvolvedor(   const cCorreioEletronico &mail, 
+ResultadoGestao StubLNGestao::criarDesenvolvedor(   const cCorreioEletronico &mail,
                                                     const cSenha &senha,
-                                                    const cNome &nome, 
-                                                    const cSobrenome &sobrenome, 
+                                                    const cNome &nome,
+                                                    const cSobrenome &sobrenome,
                                                     const cData &data) throw(runtime_error)
 {
 
@@ -77,12 +77,12 @@ ResultadoGestao StubLNGestao::criarDesenvolvedor(   const cCorreioEletronico &ma
     return resultado;
 }
 
-ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &mail, 
-                                                    const cSenha &senha, 
-                                                    const cNome &nome, 
-                                                    const cSobrenome &sobrenome, 
-                                                    const cData &data, 
-                                                    const cEndereco &endereco, 
+ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &mail,
+                                                    const cSenha &senha,
+                                                    const cNome &nome,
+                                                    const cSobrenome &sobrenome,
+                                                    const cData &data,
+                                                    const cEndereco &endereco,
                                                     const cTelefone &telefone) throw(runtime_error)
 {
 
@@ -125,25 +125,9 @@ ResultadoGestao StubLNGestao::apagarUsuario(const cCorreioEletronico &mail, cons
     return resultado;
 }
 
-ResultadoVocabulario StubLNVocabulario::Menu(const ResultadoAutenticacao &user){
+ResultadoVocabulario StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
     this->user = user;
-    //leitor
-    void MostrarDados();
-    void AlterarDados();
-    void ApagarUsuario();
-    void Listar();
-    void DadsoVocab();
-    void ConsultarTermo();
-    void ConsultarDefinicao();
-
-    //desenvolvedor
-    void CadastrarDev();
-    void CriarVocab();
-    void ApagarVocab();
-    void EditarVocab();
-    //administrador
-    void EditarIdioma();
-}   
+}
 string StubLNVocabulario::MostrarNome()
 {
     string str = "Abextado";
@@ -197,59 +181,203 @@ void StubLNVocabulario::DadsoVocab(string str)
     if(strcmp(str.c_str(), "AAAA") == 0)
     {
         cout << "Desenvolvedor(es) : " << endl;
+        cout << "   Sena" << endl;
+        cout << "   Guga" << endl;
+        cout << "   Pelé" << endl;
+        cout << "Termo(s) : " << endl;
+        cout << "   Ganhar" << endl;
+        cout << "   Vencer" << endl;
+        cout << "   Triunfar" << endl;
+    }
+    else if(strcmp(str.c_str(), "BBBB") == 0)
+    {
+        cout << "Desenvolvedor(es) : " << endl;
         cout << "   Arnaldo" << endl;
         cout << "   Arnoudo" << endl;
         cout << "   Arnildo" << endl;
         cout << "Termo(s) : " << endl;
-        cout << "" << endl;
-        cout << "" << endl;
-        cout << "" << endl;
-        
-
-    }
-    else if(strcmp(str.c_str(), "BBBB") == 0)
-    {
-        
+        cout << "   Manga" << endl;
+        cout << "   Assistir" << endl;
+        cout << "   Meia" << endl;
     }
     else if(strcmp(str.c_str(), "CCCC") == 0)
     {
-        
+        cout << "Desenvolvedor(es) : " << endl;
+        cout << "   Arnaldo" << endl;
+        cout << "   Arnoudo" << endl;
+        cout << "   Arnildo" << endl;
+        cout << "Termo(s) : " << endl;
+        cout << "Vitoria" << endl;
+        cout << "Derrota" << endl;
+        cout << "Empate" << endl;
     }
     else
-    {
-        
-    }
-    
-    
+        cout << "Vocabulário não encontrado" << endl;
 }
 void StubLNVocabulario::ConsultarTermo(string str)
 {
+    if (strcmp(str.c_str(), "Ganhar") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : " << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Vencer") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : " << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Triunfar") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : " << "1" << endl;
+    }
 
+
+
+    else if (strcmp(str.c_str(), "Manga") == 0)
+    {
+        cout << "Manga : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : " << "2" << endl;
+    }
+    else if (strcmp(str.c_str(), "Assistir") == 0)
+    {
+        cout << "Assistir : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : " << "2" << endl;
+    }
+    else if (strcmp(str.c_str(), "Meia") == 0)
+    {
+        cout << "Meia : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : " << "2" << endl;
+    }
+
+
+
+    else if (strcmp(str.c_str(), "Vitoria") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : " << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Derrota") == 0)
+    {
+        cout << "Derrota : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : "
+             << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Empate    ") == 0)
+    {
+        cout << "Empate : " << endl;
+        cout << "Termo preferido" << endl;
+        cout << "Definições : "
+             << "1" << endl;
+    }
+    else
+        cout << "Termo não encontrado" << endl;
 }
 void StubLNVocabulario::ConsultarDefinicao(string str)
 {
+    if (strcmp(str.c_str(), "Ganhar") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : "
+             << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Vencer") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : "
+             << "1" << endl;
+    }
+    else if (strcmp(str.c_str(), "Triunfar") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Termo não preferido" << endl;
+        cout << "Definições : "
+             << "1" << endl;
+    }
 
+
+
+
+    else if (strcmp(str.c_str(), "Manga") == 0)
+    {
+        cout << "Manga : " << endl;
+        cout <<  "Parte da camisa localizada nos braços." << endl;
+        cout <<  "Fruta doce." << endl;
+    }
+    else if (strcmp(str.c_str(), "Assistir") == 0)
+    {
+        cout << "Assistir : " << endl;
+        cout <<  "Ajudar." << endl;
+        cout <<  "Ver algo." << endl;
+    }
+    else if (strcmp(str.c_str(), "Meia") == 0)
+    {
+        cout << "Meia : " << endl;
+        cout << "Vestimenta para pé." << endl;
+        cout << "Metade." << endl;
+    }
+
+
+
+
+    else if (strcmp(str.c_str(), "Vitoria") == 0)
+    {
+        cout << "Vitoria : " << endl;
+        cout << "Terminar esse trabaho." << endl;
+    }
+    else if (strcmp(str.c_str(), "Derrota") == 0)
+    {
+        cout << "Derrota : " << endl;
+        cout << "Reprovar nessa matéria." << endl;
+    }
+    else if (strcmp(str.c_str(), "Derrota") == 0)
+    {
+        cout << "Empate : " << endl;
+        cout << "Quando uma competição acaba sem ganhador nem perdedor." << endl;
+    }
+    else
+        cout << "Termo não encontrado" << endl;
 }
 
 //desenvolvedor
 void CadastrarDev()
 {
-
+    cout << "Desenvolvedor cadastrdo com sucesso" << endl;
 }
 void CriarVocab()
 {
-
+    cVocabControlado  vocab;
+    char entrada[20];
+    cout << "Nome do novo vocabulário : " << endl;
+    cin >> entrada;
+    vocab.setNome(entrada);
+    cout << "Idioma : " << endl;
+    cin >> entrada;
+    vocab.setIdioma(entrada);
+    cout << "Data de criação : " << endl;
+    cin >> entrada;
+    vocab.setData(entrada);
 }
 void ApagarVocab()
 {
-
+    cout << "Vocabulario apagado" << endl;
 }
 void EditarVocab()
 {
-
+    cout << "Dados alterados com sucesso" << endl;
 }
 //administrador
 void EditarIdioma()
 {
-
+    cout << "Idioma alterados com sucesso" << endl;
 }

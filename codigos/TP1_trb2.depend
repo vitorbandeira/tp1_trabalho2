@@ -1,26 +1,29 @@
 # depslib dependency file v1.0
-1526764249 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1526947068 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
 	"controladoras.h"
 	"stdio.h"
+	"interfaces.h"
+	<string>
+	<iostream>
 
-1526850962 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
+1526947229 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
 	"interfaces.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1526851650 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
+1526947637 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>
 
-1526759384 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.h
+1526930835 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.h
 	<iostream>
 	<cstring>
 	<stdexcept>
 	<string.h>
 
-1526852275 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.h
+1526940913 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.h
 	<iostream>
 	<cstring>
 	"dominios.h"
@@ -30,12 +33,12 @@
 	<string.h>
 	<stdlib.h>
 
-1526656657 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.cpp
+1526943700 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.cpp
 	<iostream>
 	"entidades.h"
 	<string.h>
 
-1526763952 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
+1526939611 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
 	<stdexcept>
 	<iostream>
 	<string>
@@ -45,13 +48,13 @@
 	"controladoras.h"
 	"stubs.h"
 
-1526852197 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.h
+1526912318 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.h
 	"Interfaces.h"
 	<stdexcept>
 	<iostream>
 	<typeinfo>
 
-1526849549 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.cpp
+1526943760 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.cpp
 	"stubs.h"
 
 1526325783 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\teste.c

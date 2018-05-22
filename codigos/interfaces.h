@@ -105,17 +105,36 @@ class ILNVocabulario;
 class IUVocabulario
 {
 public:
-  
-  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user);
-  virtual ResultadoVocabulario menuDesenvolvedor();
-  virtual ResultadoVocabulario menuAdministrador();
-
 
   /** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
   virtual void setCntrLNVocabulario(ILNVocabulario *) = 0;
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) = 0;
+
+  virtual string Mostrar() = 0;
+  virtual string MostrarNome() = 0;
+  virtual string MostrarSobreome() = 0;
+  virtual string MostrarSenha() = 0;
+  virtual string MostrarEmail() = 0;
+  virtual string MostrarData() = 0;
+  virtual string MostrarEndereco() = 0;
+  virtual string MostrarTelefone() = 0;
+  virtual void AlterarDados() = 0;
+  virtual void ApagarUsuario() = 0;
+  virtual void Listar() = 0;
+  virtual void DadsoVocab(string str) = 0;
+  virtual void ConsultarTermo(string str) = 0;
+  virtual void ConsultarDefinicao(string str) = 0;
+
+  //desenvolvedor
+  virtual void CadastrarDev() = 0;
+  virtual void CriarVocab() = 0;
+  virtual void ApagarVocab() = 0;
+  virtual void EditarVocab() = 0;
+  //administrador
+  virtual void EditarIdioma() = 0;
 };
 
 /**

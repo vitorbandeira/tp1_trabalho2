@@ -47,7 +47,7 @@ public:
         setNome(string);
     }/** Método Get. Retorna o conteúdo de um objeto Nome. */
 
-    inline char * getNome()
+    inline std::string getNome() const
     {
         return string;
     }
@@ -94,7 +94,7 @@ public:
         setSobrenome(string);
     }
     /** Método Get. Retorna o conteúdo de um objeto Sobrenome. */
-    inline char * getSobrenome()
+    inline std::string getSobrenome() const
     {
         return string;
     }
@@ -147,7 +147,7 @@ public:
         setTelefone(str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Telefone. */
-    inline char * getTelefone()
+    inline std::string getTelefone() const
     {
         return numero;
     }
@@ -200,7 +200,7 @@ public:
         strcpy(string, str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Endereço. */
-    inline char * getEndereco()
+    inline std::string getEndereco() const
     {
         return string;
     }
@@ -267,7 +267,7 @@ public:
         strcpy(string,str);
     }
     /** Método Get. Retorna o conteúdo de um objeto Data. */
-    inline char *getData()
+    inline std::string getData() const
     {
         return string;
     }
@@ -283,8 +283,8 @@ class cCorreioEletronico
 {
 private:
 
-    /**
-     * String para correio eletronico.
+        /**
+         * String para correio eletronico.
      */
     char string[30];
 
@@ -303,7 +303,7 @@ public:
   /**
      * Método Construtor com validação de correio eletrônico (email).
      */
-  cCorreioEletronico(char str[30])
+  cCorreioEletronico(const char str[30])
   {
       setCorreioEletronico(str);
     }

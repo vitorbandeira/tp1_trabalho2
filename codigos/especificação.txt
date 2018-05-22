@@ -45,7 +45,7 @@ Cada vocabulário controlado pode conter zero ou vários termos.
 Termos
 Cada termo pertence a um vocabulário controlado. Quando um termo é criado, o desenvolvedor deve informar nome do termo, classe do termo e data. 
 
-Cada termo pode ter de zero a cinco definições. Quando de uma definição, o desenvolvedordeve informar o texto da definição e data. 
+Cada termo pode ter de zero a cinco definições. Quando de uma definição, o desenvolvedor deve informar o texto da definição e data. 
 
 Cada termo pode ter de zero a cinco definições. Cada definição está associada a umou a vários -termos. 
 

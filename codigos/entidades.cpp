@@ -6,7 +6,7 @@ using namespace std;
 
 void cLeitor::Validade(const char str[8]){
 	char nom[20];
-	strcpy(nom, this->nome->getNome());
+	strcpy(nom, this->nome->getNome().c_str());
     if(strlen(nom) <= strlen(str)){
     	for (int i = 0; i < strlen(str); ++i)
     	{

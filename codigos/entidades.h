@@ -18,7 +18,7 @@ class Resultado
 
 	const static int SUCESSO = 0; /** Constante para cenario de SUCESSO.*/
 	const static int FALHA = 1; /** Constante para cenario de FALHA. */
-	
+
 
 /** Metodo setValor.*/
 	void setValor(int valor)
@@ -39,6 +39,7 @@ class ResultadoAutenticacao : public Resultado
   private:
 
 	cCorreioEletronico email; /** Atributo Correio Eletrônico.*/
+	cSenha senha; /** Atributo Senha.*/
 
   public:
 	const static int LEITOR = 2;
@@ -71,39 +72,6 @@ class ResultadoAutenticacao : public Resultado
 	}
 };
 
-/** Entidade ResultadoGestao. */
-class ResultadoGestao : public Resultado
-{
-
-  private:
-	cCorreioEletronico email; /** Atributo Email/Correio Eletronico.*/
-	cSenha senha; /** Atributo Senha.*/
-
-  public:
-	/** Metodo setMail*/
-	void setMail(const cCorreioEletronico &email)
-	{ // passagem por referência.
-		this->email = email;
-	}
-
-	/** Metodo getMail.*/
-	cCorreioEletronico getMail() const
-	{
-		return email;
-	}
-
-	/** Metodo setSenha*/
-	void setSenha(const cCorreioEletronico &email)
-	{ // passagem por referência.
-		this->senha = senha;
-	}
-
-	/** Metodo getSenha.*/
-	cSenha getSenha() const
-	{
-		return senha;
-	}
-};
 
 /** Entidade ResultadoVocabulario. */
 class ResultadoVocabulario : public Resultado
@@ -300,6 +268,7 @@ private:
 	cSenha * senha; /** Atributo Senha. Atributo do tipo dominio Senha.*/
 	cData * data; /** Atributo Data. Atributo do tipo dominio Data.*/
 	cEndereco * endereco; /** Atributo Endereco. Atributo do tipo dominio Endereco.*/
+	cTelefone * telefone; /** Atributo Telefone. Atributo do tipo dominio Telefone.*/
 	/** Metodo de Validade. Deve verificar a hipotese de haver o nome do administrador no interior de sua senha.*/
     void Validade(char str[8]);
 
@@ -313,6 +282,7 @@ public:
 	senha = new cSenha;
 	data = new cData;
 	endereco = new cEndereco;
+	telefone = new cTelefone;
 	};
 
 	/** Metodo Destrutor.*/
@@ -323,6 +293,7 @@ public:
         delete senha;
         delete data;
         delete endereco;
+		delete telefone;
 	};
 
 	/** Metodo Set Nome para entidade Administrador.*/
@@ -385,7 +356,123 @@ public:
         return getEndereco();
 	}
 
+	/** Metodo Set Endereco para entidade Administrador.*/
+	void inline setTelefone(const char str[11]){
+	    telefone->setTelefone(str);
+	}
 
+	/** Metodo Get Endereco para entidade Administrador.*/
+	inline string getTelefone(){
+        return getTelefone();
+	}
+
+};
+/** Entidade ResultadoGestao. */
+class ResultadoGestao : public Resultado
+{
+
+  private:
+	cAdministrador * administador; /** Atributo Senha.*/
+
+  public:
+	/** Metodo setMail*/
+	void setMail(const cCorreioEletronico &email)
+	{ // passagem por referência.
+		administador->setCorreioEletronico(email.getCorreioEletronico().c_str());
+	}
+
+	/** Metodo getMail.*/
+	cCorreioEletronico getMail() const
+	{
+		cCorreioEletronico email;
+		email.setCorreioEletronico(administador->getCorreioEletronico().c_str());
+		return email;
+	}
+
+	/** Metodo setSenha*/
+	void setSenha(const cSenha &senha)
+	{ // passagem por referência.
+		administador->setSenha(senha.getSenha().c_str());
+	}
+
+	/** Metodo getSenha.*/
+	cSenha getSenha() const
+	{
+		cSenha senha;
+		senha.setSenha(administador->getSenha().c_str());
+		return senha;
+	}
+
+	/** Metodo setNome*/
+	void setNome(const cNome &nome)
+	{ // passagem por referência.
+
+		administador->setNome(nome.getNome().c_str());
+	}
+
+	/** Metodo getNome.*/
+	cNome getNome() const
+	{
+		cNome nome;
+		nome.setNome(administador->getNome().c_str());
+		return nome;
+	}
+
+	/** Metodo setSobrenome*/
+	void setSobrenome(const cSobrenome &sobrenome)
+	{ // passagem por referência.
+		administador->setSobrenome(sobrenome.getSobrenome().c_str());
+	}
+
+	/** Metodo getSobrenome.*/
+	cSobrenome getSobrenome() const
+	{
+		cSobrenome sobrenome;
+		sobrenome.setSobrenome(administador->getSobrenome().c_str());
+		return sobrenome;
+	}
+
+	/** Metodo setData*/
+	void setData(const cData &data)
+	{ // passagem por referência.
+		administador->setData(data.getData().c_str());
+	}
+
+	/** Metodo getData.*/
+	cData getData() const
+	{
+		cData data;
+		data.setData(administador->getData().c_str());
+		return data;
+	}
+
+	/** Metodo setTelefone*/
+	void setTelefone(const cTelefone &telefone)
+	{ // passagem por referência.
+		administador->setTelefone(telefone.getTelefone().c_str());
+	}
+
+	/** Metodo getTelefone.*/
+	cTelefone getTelefone() const
+	{
+		cTelefone telefone;
+		telefone.setTelefone(administador->getTelefone().c_str());
+		return telefone;
+	}
+
+	/** Metodo setEndereco*/
+	void setEndereco(const cEndereco &endereco)
+	{ // passagem por referência.
+		administador->setEndereco(endereco.getEndereco().c_str());
+	}
+
+	/** Metodo getEndereco.*/
+	cEndereco getEndereco() const
+	{
+		cEndereco endereco;
+		endereco.setEndereco(administador->getEndereco().c_str());
+		return endereco;
+	}
 };
 /** Entidade Vocabulario Controlado. Classe que possui como atributos os Dom�nios: Nome, idioma e data.*/
 class cVocabControlado
@@ -473,7 +560,7 @@ public:
 	}
 
 	/** Metodo Get Nome para entidade Termo.*/
-	inline cNome getNome(){
+	inline string getNome(){
         return nome->getNome();
 	}
 

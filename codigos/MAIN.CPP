@@ -42,7 +42,8 @@ int main()
 
             ResultadoAutenticacao resultadoA;
 
-            while(true){
+            while(true)
+            {
 
                 // Simula a tela de apresentacao (tela inicial) de sistema.
 
@@ -59,7 +60,8 @@ int main()
 
                 // Critica o resultado da autentica��o.
 
-                if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) {
+                if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO) 
+                {
                     cout << "validado" << endl;
                     IUVocabulario *cntrIUVocabulario = new CntrIUVocabulario();
                     ILNVocabulario *stubLNVocabulario = new StubLNVocabulario();
@@ -68,29 +70,26 @@ int main()
 
                     cntrIUVocabulario->setCntrLNVocabulario(stubLNVocabulario);
 
-                    ResultadoVocabulario resultadoV;
-                    try{
-                        const int LEITOR = 2;
-                        const int DESENVOLVEDOR = 3;
-                        const int ADMINISTRADOR = 4;
-                        switch (resultadoA.tipoUsuario)
+
+                    bool continuar = false;
+                    do{
+                        ResultadoVocabulario resultadoV;
+                        try
                         {
-                            case LEITOR:
-                                resultadoV = cntrIUVocabulario->Menu(resultadoA);
-                                break;
-                        
-                            case DESENVOLVEDOR:
-                                
-                                break;
-                        
-                            case ADMINISTRADOR:
-                                
-                                break;
-                        
-                            default:
-                                break;
+                            resultadoV = cntrIUVocabulario->Menu(resultadoA);
                         }
-                    }
+                        catch (const runtime_error &exp)
+                        {
+                            cout << "Erro de sistema." << endl;
+                        }
+                        cout << "Realizar outra operação?" << endl;
+                        cout << "s/n" << endl;
+                        char ch = 'n';
+                        if(ch == 's')
+                            continuar = true;
+                        else
+                            continuar = false;
+                    }while(continuar);
                 }
             }
 

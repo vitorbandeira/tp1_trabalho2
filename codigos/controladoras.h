@@ -15,7 +15,7 @@ class CntrIUAutenticacao : public IUAutenticacao
 {
 
   private:
-    
+
 /**Atributo link. Cria referencia para o servidor (Stub) */
     ILNAutenticacao *cntrLNAutenticacao;
 
@@ -38,22 +38,22 @@ class CntrIUGestao : public IUGestao
 {
 
   private:
-    
-/**Atributo link. Cria referencia para o servidor (Stub) */
+
+    /**Atributo link. Cria referencia para o servidor (Stub) */
     ILNGestao *cntrLNGestao;
 
   public:
 
-/** Metodo criarLeitor. Da inicio a criacao de um usuario Leitor e faz validacao dos dados fornecidos. */
+    /** Metodo criarLeitor. Da inicio a criacao de um usuario Leitor e faz validacao dos dados fornecidos. */
     ResultadoGestao criarLeitor() throw(runtime_error);
-/** Metodo criarDesenvolvedor. Da inicio a criacao de um usuario Desenvolvedor e faz validacao dos dados fornecidos. */
+    /** Metodo criarDesenvolvedor. Da inicio a criacao de um usuario Desenvolvedor e faz validacao dos dados fornecidos. */
     ResultadoGestao criarDesenvolvedor() throw(runtime_error);
-/** Metodo criarAdministrador. Da inicio a criacao de um usuario Administrador e faz validacao dos dados fornecidos. */
+    /** Metodo criarAdministrador. Da inicio a criacao de um usuario Administrador e faz validacao dos dados fornecidos. */
     ResultadoGestao criarAdministrador() throw(runtime_error);
-/** Metodo apagarUsuario. Apaga uma conta de usuario. */  
+    /** Metodo apagarUsuario. Apaga uma conta de usuario. */
     ResultadoGestao apagarUsuario() throw(runtime_error);
 
-/** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
+    /** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
     void setCntrLNGestao(ILNGestao *);
 };
 
@@ -70,7 +70,7 @@ class CntrIUVocabulario : public IUVocabulario
     /**Atributo link. Cria referencia para o servidor (Stub) */
     ILNVocabulario *cntrLNVocabulario;
     ResultadoAutenticacao user;
-
+protected:
     //leitor
     void MostrarDados();
     void AlterarDados();
@@ -91,8 +91,6 @@ class CntrIUVocabulario : public IUVocabulario
 
   public:
     ResultadoVocabulario Menu(ResultadoAutenticacao user) throw(runtime_error);
-    ResultadoVocabulario menuDesenvolvedor(ResultadoAutenticacao *user) throw(runtime_error);
-    ResultadoVocabulario menuAdministrador(ResultadoAutenticacao *user) throw(runtime_error);
 
     /**Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub). */
     void setCntrLNVocabulario(ILNVocabulario *);

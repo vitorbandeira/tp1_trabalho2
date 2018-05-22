@@ -1,5 +1,8 @@
 #include "controladoras.h"
 #include "stdio.h"
+#include "interfaces.h"
+#include <string>
+#include <iostream>
 
 // Defini��es de m�todos da classe CntrIUAutenticacao.
 
@@ -236,9 +239,9 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
     return resultadoG;
 }
 
-ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user)
+ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(runtime_error)
 {
-    this->user = user;
+    //this->user = user;
     cout << "O que deseja fazer?" << endl;
     cout << "0 - Sair" << endl;
     cout << "1 - Mostrar dados" << endl;
@@ -260,6 +263,7 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user)
         }
     }
     int escolha = 0;
+    char str[20];
     cin >> escolha;
 
     switch (escolha)
@@ -283,13 +287,11 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user)
         break;
     case 6:
         cout << "Nome do vocabulário : " << endl;
-        char str[20];
         cin >> str;
         ConsultarTermo();
         break;
     case 7:
         cout << "Nome do vocabulário : " << endl;
-        char str[20];
         cin >> str;
         ConsultarDefinicao();
         break;
@@ -300,17 +302,17 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user)
 
 void CntrIUVocabulario::MostrarDados()
 {
-    cout << "Nome : " << algo << endl;
-    cout << "Sobrenome : " << algo << endl;
-    cout << "Senha : " << algo << endl;
-    cout << "E-mail : " << algo << endl;
+    cout << "Nome : " << MostrarNome() << endl;
+    cout << "Sobrenome : " << MostrarSobreome() << endl;
+    cout << "Senha : " << MostrarSenha() << endl;
+    cout << "E-mail : " << MostrarEmail() << endl;
     if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
     {
-        cout << "Data de nascimento : " << algo << endl;
+        cout << "Data de nascimento : " << MostrarData() << endl;
         if (user.tipoUsuario == user.DESENVOLVEDOR)
         {
-            cout << "Telefone : " << algo << endl;
-            cout << "Endereco : " << algo << endl;
+            cout << "Telefone : " << MostrarTelefone() << endl;
+            cout << "Endereco : " << MostrarEndereco() << endl;
         }
     }
 }
@@ -320,14 +322,13 @@ void CntrIUVocabulario::AlterarDados()
     while (!(0 < escolha && escolha < 4))
     {
         cout << "Qual campo deseja alterar?" << endl;
-        cout << "0 - Sair" << endl;
         cout << "1 - Nome" << endl;
         cout << "2 - sobrenome" << endl;
         cout << "3 - Senha" << endl;
         cout << "4 - E-mail" << endl;
         if (user.tipoUsuario <= user.DESENVOLVEDOR)
         {
-            cout << "5 - Data" << algo << endl;
+            cout << "5 - Data" << endl;
             if (user.tipoUsuario == user.DESENVOLVEDOR)
             {
                 cout << "6 - Data de nascimento" << endl;
@@ -345,35 +346,33 @@ void CntrIUVocabulario::AlterarDados()
         {
             switch (escolha)
             {
-            case 0:
-                sair;
-                return;
             case 1:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 2:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 3:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 4:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 5:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 6:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 7:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
             case 8:
-                algo;
+                IUVocabulario::AlterarDados();
                 break;
 
             default:
+                cout << "Entrada invalida" << endl;
                 break;
             }
         }
@@ -381,51 +380,51 @@ void CntrIUVocabulario::AlterarDados()
 }
 void CntrIUVocabulario::ApagarUsuario()
 {
-    algo;
+    IUVocabulario::ApagarUsuario();
     cout << "Usuário apagado" << endl;
 }
 void CntrIUVocabulario::Listar()
 {
-    algo;
+    IUVocabulario::Listar();
 }
 void CntrIUVocabulario::DadsoVocab()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    algo;
+    IUVocabulario::DadsoVocab(str);
 }
 void CntrIUVocabulario::ConsultarTermo()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    algo;
+    IUVocabulario::ConsultarTermo(str);
 }
 void CntrIUVocabulario::ConsultarDefinicao()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    algo;
+    IUVocabulario::ConsultarDefinicao(str);
 }
-void CadastrarDev()
+void CntrIUVocabulario::CadastrarDev()
 {
-    algo;
+    IUVocabulario::CadastrarDev();
 }
-void CriarVocab()
+void CntrIUVocabulario::CriarVocab()
 {
-    algo;
+    IUVocabulario::CriarVocab();
 }
-void ApagarVocab()
+void CntrIUVocabulario::ApagarVocab()
 {
-    algo;
+    IUVocabulario::ApagarVocab();
 }
-void EditarVocab()
+void CntrIUVocabulario::EditarVocab()
 {
-    algo;
+    IUVocabulario::EditarVocab();
 }
-void EditarIdioma()
+void CntrIUVocabulario::EditarIdioma()
 {
-    algo;
+    IUVocabulario::EditarIdioma();
 }
