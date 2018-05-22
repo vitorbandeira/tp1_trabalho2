@@ -113,7 +113,6 @@ public:
   virtual ~IUVocabulario() {}
   virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) = 0;
 
-  virtual string Mostrar() = 0;
   virtual string MostrarNome() = 0;
   virtual string MostrarSobreome() = 0;
   virtual string MostrarSenha() = 0;

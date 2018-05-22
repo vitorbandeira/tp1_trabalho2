@@ -22,6 +22,12 @@ class StubLNAutenticacao : public ILNAutenticacao
 /** Gatilho para falha de sistema.*/
     string TRIGGER_ERRO_SISTEMA = "turval.go@gmail.com";
 
+/** Gatilho para falha de sistema.*/
+    string TRIGGER_DESENVOLVEDOR = "dev@gmail.com";
+
+/** Gatilho para falha de sistema.*/
+    string TRIGGER_ADMINISTRADOR = "admin@gmail.com";
+
 /** Metodo de Autenticacao da Interface da camada de servico.*/
     ResultadoAutenticacao autenticar(const cCorreioEletronico &, const cSenha &) throw(runtime_error);
 };
@@ -64,6 +70,37 @@ class StubLNGestao : public ILNGestao
                                             const cSenha &) throw(runtime_error);
 };
 
+/** Modulo de simulacao Vocabulario na camada de servico. Herda e implementa os metodo abstrato declarado na Interface provida e contem TRIGGERS para a funcionalidade de Autenticao de usuario. */
+class StubLNVocabulario : public ILNVocabulario
+{
+    private:
+        ResultadoAutenticacao user;
 
+        string MostrarNome();
+        string MostrarSobreome();
+        string MostrarSenha();
+        string MostrarEmail();
+        string MostrarData();
+        string MostrarEndereco();
+        string MostrarTelefone();
+        void AlterarDados();
+        void ApagarUsuario();
+        void Listar();
+        void DadsoVocab(string str);
+        void ConsultarTermo(string str);
+        void ConsultarDefinicao(string str);
 
+        //desenvolvedor
+        void CadastrarDev();
+        void CriarVocab();
+        void ApagarVocab();
+        void EditarVocab();
+
+        //administrador
+        void EditarIdioma();
+
+     public:
+        /** Metodo de Vocabulario da Interface da camada de servico.*/
+        ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error);
+};
 #endif // STUBS_H_INCLUDED

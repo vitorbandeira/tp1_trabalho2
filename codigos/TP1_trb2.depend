@@ -6,13 +6,13 @@
 	<string>
 	<iostream>
 
-1526947229 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
+1526947766 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
 	"interfaces.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1526947637 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
+1526987980 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>

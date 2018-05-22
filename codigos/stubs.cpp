@@ -17,10 +17,18 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &m
         resultado.setValor(ResultadoAutenticacao::FALHA);
     else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
         throw runtime_error("Erro de sistema");
-    else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_DESENVOLVEDOR.c_str()) == 0)
+    else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_DESENVOLVEDOR.c_str()) == 0){
         resultado.tipoUsuario = resultado.DESENVOLVEDOR;
-    else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ADMINISTRADOR.c_str()) == 0)
+        resultado.setValor(ResultadoAutenticacao::SUCESSO);
+        resultado.setMail(mail);
+        resultado.setSenha(senha);
+    }
+    else if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ADMINISTRADOR.c_str()) == 0){
         resultado.tipoUsuario = resultado.ADMINISTRADOR;
+        resultado.setValor(ResultadoAutenticacao::SUCESSO);
+        resultado.setMail(mail);
+        resultado.setSenha(senha);
+    }
     else{
         resultado.tipoUsuario = resultado.LEITOR;
         resultado.setValor(ResultadoAutenticacao::SUCESSO);
