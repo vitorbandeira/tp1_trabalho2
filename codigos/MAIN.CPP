@@ -20,6 +20,7 @@ int main()
     cout << "1 - Autenticar" << endl;
     cout << "2 - Gestao" << endl;
 
+
     cin >> escolha;
 
 
@@ -48,22 +49,17 @@ int main()
                 // Simula a tela de apresentacao (tela inicial) de sistema.
 
                 cout << endl << "Tela de apresentacao de sistema." << endl;
-
                 try{
                     // Ilustra soliciatacao de servi�o de autentica��o.
-
                     resultadoA = cntrIUAutenticacao->autenticar();
                 }
                 catch(const runtime_error &exp){
                         cout << "Erro de sistema." << endl;
                 }
-
                 // Critica o resultado da autentica��o.
 
                 if(resultadoA.getValor() == ResultadoAutenticacao::SUCESSO)
                 {
-                    cout << "email: " << resultadoA.getMail().getCorreioEletronico().c_str() << endl
-                    << "senha: " << resultadoA.getSenha().getSenha().c_str() << endl;
                     IUVocabulario *cntrIUVocabulario = new CntrIUVocabulario();
                     ILNVocabulario *stubLNVocabulario = new StubLNVocabulario();
 
@@ -72,23 +68,25 @@ int main()
                     cntrIUVocabulario->setCntrLNVocabulario(stubLNVocabulario);
 
                     ResultadoVocabulario resultadoV;
+                    resultadoV.setSair(false);
                     char ch = 'n';
                     do{
                         try
                         {
-                            // cout << "Cheguei aqui" << endl;
-                            cntrIUVocabulario->Menu(resultadoA);
-
-
+                            resultadoV = cntrIUVocabulario->Menu(resultadoA);
                         }
                         catch (const runtime_error)
                         {
                             cout << "Erro de sistema." << endl;
                         }
+                        if(resultadoV.getSair())
+                            return 1;
                         cout << "Realizar outra operação?" << endl;
                         cout << "s/n" << endl;
                         cin >> ch;
                     }while(ch == 's');
+                    if(ch == 'n')
+                        break;
                 }
             }
 

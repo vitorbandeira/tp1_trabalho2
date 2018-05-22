@@ -41,12 +41,12 @@ class ResultadoAutenticacao : public Resultado
 
 	cCorreioEletronico email; /** Atributo Correio Eletrônico.*/
 	cSenha senha; /** Atributo Senha.*/
+	int tipoUsuario;
 
   public:
 	const static int LEITOR = 2;
 	const static int DESENVOLVEDOR = 3;
 	const static int ADMINISTRADOR = 4;
-	int tipoUsuario;
 
 	/** Metodo setMail.*/
 	void setMail(const cCorreioEletronico &email)
@@ -71,6 +71,16 @@ class ResultadoAutenticacao : public Resultado
 	{
 		return senha;
 	}
+
+	void setUser(int tipoUsuario)
+	{ // passagem por referência.
+		this->tipoUsuario = tipoUsuario;
+	}
+
+	int getUser() const
+	{
+		return tipoUsuario;
+	}
 };
 
 
@@ -79,32 +89,16 @@ class ResultadoVocabulario : public Resultado
 {
 
   private:
-	cCorreioEletronico email; /** Atributo Email/Correio Eletronico.*/
-	cSenha senha;
+	bool sair;
 
   public:
-	/** Metodo setMail*/
-	void setMail(const cCorreioEletronico &email)
-	{ // passagem por referência.
-		this->email = email;
-	}
-
-	/** Metodo getMail.*/
-	cCorreioEletronico getMail() const
+	inline void setSair(bool s)
 	{
-		return email;
+		sair = s;
 	}
-
-	/** Metodo setSenha*/
-	void setSenha(const cCorreioEletronico &email)
-	{ // passagem por referência.
-		this->senha = senha;
-	}
-
-	/** Metodo getSenha.*/
-	cSenha getSenha() const
+	inline bool getSair()
 	{
-		return senha;
+		return sair;
 	}
 };
 

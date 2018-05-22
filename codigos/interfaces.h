@@ -105,6 +105,10 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
+<<<<<<< HEAD
+=======
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
+>>>>>>> 25ae2bf119967cfc53d82a3c51cc5ab002222692
 
   /** Metodo Virtual Abstrato Menu. Apresenta novas opcoes ao usuario caso ele tenha sido autenticado com sucesso. Implementado por CtrlIUVocabulario.*/
   virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;

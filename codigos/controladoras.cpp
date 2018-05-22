@@ -44,17 +44,23 @@ ResultadoAutenticacao CntrIUAutenticacao::autenticar() throw(runtime_error)
 
     resultadoA = cntrLNAutenticacao->autenticar(email, senha);
 
+    cout << "resultadoA.tipoUsuario = "
+         << resultadoA.getUser() << endl;
+
     // Informar resultado da autentica��o.
 
     if (resultadoA.getValor() == ResultadoAutenticacao::FALHA)
         cout << endl
              << "Falha na autenticacao." << endl;
     else if (resultadoA.getValor() == ResultadoAutenticacao::DESENVOLVEDOR)
-        resultadoA.tipoUsuario = resultadoA.DESENVOLVEDOR;
+        resultadoA.setUser(3);
     else if (resultadoA.getValor() == ResultadoAutenticacao::ADMINISTRADOR)
-        resultadoA.tipoUsuario = resultadoA.ADMINISTRADOR;
+    {
+        resultadoA.setUser(4);
+        cout << "admin" << endl;
+    }
     else
-        resultadoA.tipoUsuario = resultadoA.LEITOR;
+        resultadoA.setUser(2);
 
     return resultadoA;
 }
@@ -187,11 +193,6 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
 
     while (true)
     {
-
-        cout << endl
-             << "Autenticacao de usuario." << endl
-             << endl;
-
         try
         {
             cout << "Digite o endereço de e-mail : ";
@@ -239,11 +240,15 @@ ResultadoGestao CntrIUGestao::criarAdministrador() throw(runtime_error)
     return resultadoG;
 }
 
-void CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error)
+ResultadoVocabulario CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error)
 {
     this->user = user;
-    
+    cntrLNVocabulario->Menu(user);
     ResultadoVocabulario resultadoV;
+    resultadoV.setSair(false);
+
+    cout << "tipoUsuario = " << user.getUser() << endl;
+
     cout << "O que deseja fazer?" << endl;
     cout << "0 - Sair" << endl;
     cout << "1 - Mostrar dados" << endl;
@@ -253,13 +258,13 @@ void CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_er
     cout << "5 - Apresentar dados de vocabulário controlado" << endl;
     cout << "6 - Consultar termo" << endl;
     cout << "7 - Consultar definição de termo" << endl;
-    if (user.tipoUsuario == user.DESENVOLVEDOR || user.tipoUsuario == user.ADMINISTRADOR)
+    if (strcmp(user.getMail().getCorreioEletronico().c_str(), "dev@gmail.com") == 0 || strcmp(user.getMail().getCorreioEletronico().c_str(), "admin@gmail.com") == 0)
     {
         cout << "8 - Cadastrar como desenvolvedor de vocabulário controlado" << endl;
         cout << "9 - Criar definição de vocabulário" << endl;
         cout << "10 - Apagar definição de vocabulário" << endl;
         cout << "11 - Editar definição de vocabulário" << endl;
-        if (user.tipoUsuario == user.DESENVOLVEDOR)
+        if (strcmp(user.getMail().getCorreioEletronico().c_str(), "admin@gmail.com") == 0)
         {
             cout << "12 - Editar idioma de vocabulário" << endl;
         }
@@ -280,6 +285,7 @@ void CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_er
         break;
     case 3:
         cntrLNVocabulario->ApagarUsuario();
+        resultadoV.setSair(true);
         break;
     case 4:
         cntrLNVocabulario->Listar();
@@ -300,10 +306,25 @@ void CntrIUVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_er
         cin >> str;
         cntrLNVocabulario->ConsultarDefinicao(str);
         break;
+    case 8:
+        cntrLNVocabulario->CadastrarDev();
+        break;
+    case 9:
+        cntrLNVocabulario->CriarVocab();
+        break;
+    case 10:
+        cntrLNVocabulario->ApagarVocab();
+        break;
+    case 11:
+        cntrLNVocabulario->EditarVocab();
+        break;
+    case 12:
+        cntrLNVocabulario->EditarIdioma();
+        break;
     default:
-        cout << "cheguei aqui\n";
         break;
     }
+    return resultadoV;
 }
 
 void CntrIUVocabulario::MostrarDados()
@@ -313,63 +334,59 @@ void CntrIUVocabulario::MostrarDados()
 void CntrIUVocabulario::AlterarDados()
 {
     int escolha = 0;
-    while (!(0 < escolha && escolha < 4))
-    {
+
+    do{
         cout << "Qual campo deseja alterar?" << endl;
         cout << "1 - Nome" << endl;
         cout << "2 - Sobrenome" << endl;
         cout << "3 - Senha" << endl;
         cout << "4 - E-mail" << endl;
-        if (user.tipoUsuario <= user.DESENVOLVEDOR)
+        if (user.getUser() <= user.DESENVOLVEDOR)
         {
             cout << "5 - Data" << endl;
-            if (user.tipoUsuario == user.DESENVOLVEDOR)
+            if (user.getUser() == user.DESENVOLVEDOR)
             {
                 cout << "6 - Data de nascimento" << endl;
                 cout << "7 - Telefone" << endl;
                 cout << "8 - Endereco" << endl;
             }
         }
-        int escolha = -1;
         cin >> escolha;
-        cout << "Novo valor : " << endl;
-        char str[20];
-        cin >> str;
+    }while (!(0 < escolha && escolha < 7));
+    cout << "Novo valor : " << endl;
+    char str[20];
+    cin >> str;
 
-        while (true)
-        {
-            switch (escolha)
-            {
-            case 1:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 2:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 3:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 4:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 5:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 6:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 7:
-                cntrLNVocabulario->AlterarDados();
-                break;
-            case 8:
-                cntrLNVocabulario->AlterarDados();
-                break;
+    switch (escolha)
+    {
+    case 1:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 2:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 3:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 4:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 5:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 6:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 7:
+        cntrLNVocabulario->AlterarDados();
+        break;
+    case 8:
+        cntrLNVocabulario->AlterarDados();
+        break;
 
-            default:
-                cout << "Entrada invalida" << endl;
-                break;
-            }
-        }
+    default:
+        cout << "Entrada invalida" << endl;
+        break;
     }
 }
 void CntrIUVocabulario::ApagarUsuario()
