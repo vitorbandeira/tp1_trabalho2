@@ -112,27 +112,6 @@ ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &ma
     return resultado;
 }
 
-ResultadoGestao StubLNGestao::apagarUsuario(const cCorreioEletronico &mail, const cSenha &senha) throw(runtime_error)
-{
-
-    ResultadoGestao resultado;
-
-    // Diferentes comportamentos dependendo do valor da matr�cula.
-
-    if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
-        resultado.setValor(ResultadoAutenticacao::FALHA);
-    else if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_ERRO_SISTEMA.c_str()) == 0)
-        throw runtime_error("Erro de sistema");
-    else
-    {
-        resultado.setValor(ResultadoAutenticacao::SUCESSO);
-        resultado.setMail(mail);
-    }
-    cout << "Usuário apagado com sucesso" << endl;
-
-    return resultado;
-}
-
 ResultadoVocabulario StubLNVocabulario::Menu(const ResultadoAutenticacao &user) throw(runtime_error){
     this->user = user;
 }
@@ -174,7 +153,7 @@ void StubLNVocabulario::Listar()
     cout << "BBBB" << endl;
     cout << "CCCC" << endl;
 }
-void StubLNVocabulario::DadsoVocab(string str)
+void StubLNVocabulario::DadosVocab(string str)
 {
     if(strcmp(str.c_str(), "AAAA") == 0)
     {

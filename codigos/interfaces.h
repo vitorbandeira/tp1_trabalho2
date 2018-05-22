@@ -65,9 +65,6 @@ public:
   /** Metodo Abstrato criar Administrador. Da inicio a criacao de um usuario Administrador e faz a validacao dos dados fornecidos. Implementada pelo modulo CtrlIUGestao.*/
   virtual ResultadoGestao criarAdministrador() throw(runtime_error) = 0;
 
-  /** Metodo Abstrato apagarUsuario. Apaga conta de usuario independente do tipo. Implementada pelo modulo CtrlIUGestao.*/
-  virtual ResultadoGestao apagarUsuario() throw(runtime_error) = 0;
-
   /** Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub).*/
   virtual void setCntrLNGestao(ILNGestao *) = 0;
 
@@ -90,9 +87,6 @@ public:
   /** Metodo Abstrato criarAdministrador. Cria o usuario Administrador apos feita a etapa de validacao de formato. Implementada pelo modulo de Servico (Stub). */
   virtual ResultadoGestao criarAdministrador(const cCorreioEletronico &, const cSenha &, const cNome &, const cSobrenome &, const cData &, const cEndereco &, const cTelefone &) throw(runtime_error) = 0;
 
-  /** Metodo Abstrato apagarUsuario. Apaga conta de usuario. Implementada pelo modulo de Servico (Stub). */
-  virtual ResultadoGestao apagarUsuario(const cCorreioEletronico &, const cSenha &) throw(runtime_error) = 0;
-
   /** Metodo Destrutor Virtual.*/
   virtual ~ILNGestao() {}
 };
@@ -111,15 +105,15 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
-  virtual ResultadoVocabulario Menu() throw(runtime_error) = 0;
+  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
 
   virtual void MostrarDados() = 0;
   virtual void AlterarDados() = 0;
   virtual void ApagarUsuario() = 0;
   virtual void Listar() = 0;
-  virtual void DadsoVocab(const string &str) = 0;
-  virtual void ConsultarTermo(const string &str) = 0;
-  virtual void ConsultarDefinicao(const string &str) = 0;
+  virtual void DadosVocab() = 0;
+  virtual void ConsultarTermo() = 0;
+  virtual void ConsultarDefinicao() = 0;
 
   //desenvolvedor
   virtual void CadastrarDev() = 0;
@@ -136,12 +130,13 @@ public:
  */
 class ILNVocabulario
 {
-private:
+public:
+  virtual ResultadoVocabulario Menu() = 0;
   virtual void MostrarDados() = 0;
   virtual void AlterarDados() = 0;
   virtual void ApagarUsuario() = 0;
   virtual void Listar() = 0;
-  virtual void DadsoVocab(const string &str) = 0;
+  virtual void DadosVocab(const string &str) = 0;
   virtual void ConsultarTermo(const string &str) = 0;
   virtual void ConsultarDefinicao(const string &str) = 0;
 
@@ -153,9 +148,6 @@ private:
 
   //administrador
   virtual void EditarIdioma() = 0;
-
-public:
-  virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) = 0;
 
   /** Metodo Destrutor Virtual.*/
   virtual ~ILNVocabulario() {}

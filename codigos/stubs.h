@@ -65,9 +65,6 @@ class StubLNGestao : public ILNGestao
                                             const cEndereco &,
                                             const cTelefone &) throw(runtime_error);
 
-/** Metodo apagarUsuario. Implementa o mesmo metodo abstrato declarado na Interface correspondente, simulando a delecao de um usuario. Recebe email e senha validos do usuario a ser apagado.*/
-    ResultadoGestao apagarUsuario          (const cCorreioEletronico &,
-                                            const cSenha &) throw(runtime_error);
 };
 
 /** Modulo de simulacao Vocabulario na camada de servico. Herda e implementa os metodo abstrato declarado na Interface provida e contem TRIGGERS para a funcionalidade de Autenticao de usuario. */
@@ -80,7 +77,7 @@ class StubLNVocabulario : public ILNVocabulario
         void AlterarDados();
         void ApagarUsuario();
         void Listar();
-        void DadsoVocab(string str);
+        void DadosVocab(string str);
         void ConsultarTermo(string str);
         void ConsultarDefinicao(string str);
 

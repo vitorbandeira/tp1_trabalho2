@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1526989104 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1526992684 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
 	"controladoras.h"
 	"stdio.h"
 	"interfaces.h"
 	<string>
 	<iostream>
 
-1526947766 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
+1526992656 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
 	"interfaces.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1526992226 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
+1526993129 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>

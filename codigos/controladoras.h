@@ -76,7 +76,7 @@ protected:
     void AlterarDados();
     void ApagarUsuario();
     void Listar();
-    void DadsoVocab();
+    void DadosVocab();
     void ConsultarTermo();
     void ConsultarDefinicao();
 

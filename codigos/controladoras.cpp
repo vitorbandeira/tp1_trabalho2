@@ -284,7 +284,7 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(r
         Listar();
         break;
     case 5:
-        DadsoVocab();
+        DadosVocab();
         break;
     case 6:
         cout << "Nome do vocabulário : " << endl;
@@ -303,7 +303,7 @@ ResultadoVocabulario CntrIUVocabulario::Menu(ResultadoAutenticacao user) throw(r
 
 void CntrIUVocabulario::MostrarDados()
 {
-    MostrarDados();
+    cntrLNVocabulario->MostrarDados();
 }
 void CntrIUVocabulario::AlterarDados()
 {
@@ -336,28 +336,28 @@ void CntrIUVocabulario::AlterarDados()
             switch (escolha)
             {
             case 1:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 2:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 3:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 4:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 5:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 6:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 7:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
             case 8:
-                IUVocabulario::AlterarDados();
+                cntrLNVocabulario->AlterarDados();
                 break;
 
             default:
@@ -369,51 +369,51 @@ void CntrIUVocabulario::AlterarDados()
 }
 void CntrIUVocabulario::ApagarUsuario()
 {
-    IUVocabulario::ApagarUsuario();
+    cntrLNVocabulario->ApagarUsuario();
     cout << "Usuário apagado" << endl;
 }
 void CntrIUVocabulario::Listar()
 {
-    IUVocabulario::Listar();
+    cntrLNVocabulario->Listar();
 }
-void CntrIUVocabulario::DadsoVocab()
+void CntrIUVocabulario::DadosVocab()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    IUVocabulario::DadsoVocab(str);
+    cntrLNVocabulario->DadosVocab(str);
 }
 void CntrIUVocabulario::ConsultarTermo()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    IUVocabulario::ConsultarTermo(str);
+    cntrLNVocabulario->ConsultarTermo(str);
 }
 void CntrIUVocabulario::ConsultarDefinicao()
 {
     cout << "Nome do vocabulário : " << endl;
     char str[20];
     cin >> str;
-    IUVocabulario::ConsultarDefinicao(str);
+    cntrLNVocabulario->ConsultarDefinicao(str);
 }
 void CntrIUVocabulario::CadastrarDev()
 {
-    IUVocabulario::CadastrarDev();
+    cntrLNVocabulario->CadastrarDev();
 }
 void CntrIUVocabulario::CriarVocab()
 {
-    IUVocabulario::CriarVocab();
+    cntrLNVocabulario->CriarVocab();
 }
 void CntrIUVocabulario::ApagarVocab()
 {
-    IUVocabulario::ApagarVocab();
+    cntrLNVocabulario->ApagarVocab();
 }
 void CntrIUVocabulario::EditarVocab()
 {
-    IUVocabulario::EditarVocab();
+    cntrLNVocabulario->EditarVocab();
 }
 void CntrIUVocabulario::EditarIdioma()
 {
-    IUVocabulario::EditarIdioma();
+    cntrLNVocabulario->EditarIdioma();
 }
