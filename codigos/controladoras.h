@@ -69,27 +69,41 @@ class CntrIUVocabulario : public IUVocabulario
   private:
     /**Atributo link. Cria referencia para o servidor (Stub) */
     ILNVocabulario *cntrLNVocabulario;
+    /** Atributo Usuario.*/
     ResultadoAutenticacao user;
 protected:
     //leitor
+    /** Metodo MostrarDados. Documentada em IUVocabulario.*/
     void MostrarDados();
+    /** Metodo AlterarDados. Documentada em IUVocabulario.*/
     void AlterarDados();
+    /** Metodo ApagarDados. Documentada em IUVocabulario.*/
     void ApagarUsuario();
+    /** Metodo Listar. Documentada em IUVocabulario.*/
     void Listar();
+    /** Metodo DadosVocabulario. Documentada em IUVocabulario.*/
     void DadosVocab();
+    /** Metodo ConsultarTermo. Documentada em IUVocabulario.*/
     void ConsultarTermo();
+    /** Metodo ConsultarDefinicao. Documentada em IUVocabulario.*/
     void ConsultarDefinicao();
+    /** Metodo MostrarDados. Documentada em IUVocabulario.*/
 
     //desenvolvedor
     void CadastrarDev();
+    /** Metodo CadastrarDesenvolvedor. Documentada em IUVocabulario.*/
     void CriarVocab();
+    /** Metodo CriarVocabulario. Documentada em IUVocabulario.*/
     void ApagarVocab();
+    /** Metodo EditarVocabulario. Documentada em IUVocabulario.*/
     void EditarVocab();
 
     //administrador
+    /** Metodo EditarIdioma. Documentada em IUVocabulario.*/
     void EditarIdioma();
 
   public:
+    /** Metodo Menu. Documentada em IUVocabulario.*/
     ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error);
 
     /**Metodo "link". Metodo por meio do qual e estabelecida ligacao (link) com a controladora na camada de servico (Stub). */

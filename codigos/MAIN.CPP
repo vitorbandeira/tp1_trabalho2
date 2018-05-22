@@ -1,5 +1,3 @@
-// Exemplos desenvolvidos para ilustrar a sintaxe da linguagem.
-
 #include <stdexcept>
 #include <iostream>
 #include <string>
@@ -22,10 +20,6 @@ int main()
 
 
     cin >> escolha;
-
-
-    // EXEMPLO
-    // -----------------------------------------------------------
 
     // Liga��o entre controladora na camada de apresenta��o e stub.
 

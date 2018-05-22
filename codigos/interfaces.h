@@ -105,14 +105,13 @@ public:
 
   /** Metodo Destrutor Virtual.*/
   virtual ~IUVocabulario() {}
-<<<<<<< HEAD
-=======
+  /** Metodo Virtual Abstrato Menu. Exibe menu de opcao relativas a gestao de vocabulario, caso o usuario tenha sido autenticado com sucesso.*/
   virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
->>>>>>> 25ae2bf119967cfc53d82a3c51cc5ab002222692
+
 
   /** Metodo Virtual Abstrato Menu. Apresenta novas opcoes ao usuario caso ele tenha sido autenticado com sucesso. Implementado por CtrlIUVocabulario.*/
   virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
-  /** Metodo Virtual Abstrato MostrarDados. */
+  /** Metodo Virtual Abstrato MostrarDados. Exibe dados do usuario. */
   virtual void MostrarDados() = 0;
   /** Metodo Virtual Abstrato AlterarDados. Oferece ao usuario opcoes referentes a alteracao de dados quaisquer de conta. Implementada por CtrlIUVocabulario.*/
   virtual void AlterarDados() = 0;
@@ -150,6 +149,7 @@ class ILNVocabulario
 public:
   /** Metodo Virtual Abstrato Menu. Implementado por CtrlIUVocabulario.*/
   virtual void Menu(const ResultadoAutenticacao &user) = 0;
+  /** Metodo MostrarDados. Simula a exibicao de dados de usuario.*/
   virtual void MostrarDados() throw(runtime_error) = 0;
   /** Metodo Virtual Abstrato AlterarDados. Simula a alteracao de dados pelo Stub correspondente (StubLNVocabulario).*/
   virtual void AlterarDados() = 0;
@@ -175,7 +175,7 @@ public:
   virtual void EditarVocab() = 0;
 
   //administrador
-  /** Metodo Virtual Abstrato EditarIdioma.*/
+  /** Metodo Virtual Abstrato EditarIdioma. Simula a edicao do idioma de um vocabulario dado pelo usuario.*/
   virtual void EditarIdioma() = 0;
 
   /** Metodo Destrutor Virtual.*/

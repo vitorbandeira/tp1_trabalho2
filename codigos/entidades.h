@@ -13,12 +13,12 @@ using namespace std;
 class Resultado
 {
   protected:
-	int valor;
+	int valor; /**< Atributo Valor. */
 
   public:
 
-	const static int SUCESSO = 0; /** Constante para cenario de SUCESSO.*/
-	const static int FALHA = 1; /** Constante para cenario de FALHA. */
+	const static int SUCESSO = 0; /**< Constante para cenario de SUCESSO.*/
+	const static int FALHA = 1; /**< Constante para cenario de FALHA. */
 
 
 /** Metodo setValor.*/
@@ -33,20 +33,20 @@ class Resultado
 	}
 };
 
-/** Entidade ResultadoAutenticacao.*/
+/** Entidade ResultadoAutenticacao. Criada para facilitar a o resultado da autenticacao de Usuario.*/
 class ResultadoAutenticacao : public Resultado
 {
 
   private:
 
-	cCorreioEletronico email; /** Atributo Correio Eletrônico.*/
-	cSenha senha; /** Atributo Senha.*/
-	int tipoUsuario;
+	cCorreioEletronico email; /**< Atributo Correio Eletrônico.*/
+	cSenha senha; /**< Atributo Senha.*/
+	int tipoUsuario; /**< Atributo tipoUsuario. Esta relacionado a qual tipo de usuario esta em questao: Leitor, Desenvolvedor ou Administrador.*/
 
   public:
-	const static int LEITOR = 2;
-	const static int DESENVOLVEDOR = 3;
-	const static int ADMINISTRADOR = 4;
+	const static int LEITOR = 2; /**< Constante estatica vinculada a usuario Leitor. */
+	const static int DESENVOLVEDOR = 3; /**< Constante estatica vinculada a usuario Desenvolvedor.*/
+	const static int ADMINISTRADOR = 4; /**< Constante estatica vinculada a usuario Administrador. */
 
 	/** Metodo setMail.*/
 	void setMail(const cCorreioEletronico &email)
@@ -60,23 +60,24 @@ class ResultadoAutenticacao : public Resultado
 		return email;
 	}
 
-	/** Metodo setSenha*/
+	/** Metodo setSenha. Atribui uma conta ao usuario.*/
 	void setSenha(const cSenha &senha)
 	{ // passagem por referência.
 		this->senha = senha;
 	}
 
-	/** Metodo getSenha.*/
+	/** Metodo getSenha. Retorna a senha do usuario.*/
 	cSenha getSenha() const
 	{
 		return senha;
 	}
-
+	/** Metodo setUser. Determina a que tipo de usuario a conta ira pertencer. */
 	void setUser(int tipoUsuario)
 	{ // passagem por referência.
 		this->tipoUsuario = tipoUsuario;
 	}
 
+	/** Metodo getUser. Retorna o tipo de usuario em que a conta se classifica.*/
 	int getUser() const
 	{
 		return tipoUsuario;
@@ -84,18 +85,20 @@ class ResultadoAutenticacao : public Resultado
 };
 
 
-/** Entidade ResultadoVocabulario. */
+/** Entidade ResultadoVocabulario. Criada para realizar a saida do menu de Vocabularios*/
 class ResultadoVocabulario : public Resultado
 {
 
   private:
-	bool sair;
+	bool sair; /**< Atributo Sair. */
 
   public:
+  	/** Metodo setSair.*/
 	inline void setSair(bool s)
 	{
 		sair = s;
 	}
+	/** Metodo getSair*/
 	inline bool getSair()
 	{
 		return sair;
