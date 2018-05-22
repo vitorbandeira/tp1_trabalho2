@@ -1,0 +1,11 @@
+<map id="ResultadoGestao" name="ResultadoGestao">
+<area shape="rect" id="node2" href="$classResultado.html" title="Entidade Resultado. " alt="" coords="172,95,253,121"/>
+<area shape="rect" id="node3" href="$classcAdministrador.html" title="Entidade Administrador. " alt="" coords="278,95,387,121"/>
+<area shape="rect" id="node4" href="$classcSobrenome.html" title="Domínio Sobrenome. " alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node5" href="$classcSenha.html" title="Domínio Senha. " alt="" coords="125,5,191,32"/>
+<area shape="rect" id="node6" href="$classcNome.html" title="Domínio Nome. " alt="" coords="215,5,279,32"/>
+<area shape="rect" id="node7" href="$classcData.html" title="Domínio Data. " alt="" coords="304,5,361,32"/>
+<area shape="rect" id="node8" href="$classcCorreioEletronico.html" title="Domínio Correio Eletrônico. " alt="" coords="385,5,515,32"/>
+<area shape="rect" id="node9" href="$classcEndereco.html" title="Domínio Endereço. " alt="" coords="539,5,623,32"/>
+<area shape="rect" id="node10" href="$classcTelefone.html" title="Domínio Telefone. " alt="" coords="647,5,725,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="TUcLeitor" name="TUcLeitor">
+<area shape="rect" id="node2" href="$classcLeitor.html" title="Entidade Leitor. " alt="" coords="171,95,233,121"/>
+<area shape="rect" id="node3" href="$classcSobrenome.html" title="Domínio Sobrenome. " alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node4" href="$classcSenha.html" title="Domínio Senha. " alt="" coords="125,5,191,32"/>
+<area shape="rect" id="node5" href="$classcNome.html" title="Domínio Nome. " alt="" coords="215,5,279,32"/>
+<area shape="rect" id="node6" href="$classcCorreioEletronico.html" title="Domínio Correio Eletrônico. " alt="" coords="304,5,433,32"/>
+</map>

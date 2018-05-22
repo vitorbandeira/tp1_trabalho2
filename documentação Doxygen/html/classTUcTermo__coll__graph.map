@@ -1,0 +1,6 @@
+<map id="TUcTermo" name="TUcTermo">
+<area shape="rect" id="node2" href="$classcTermo.html" title="Entidade Termo. " alt="" coords="89,95,156,121"/>
+<area shape="rect" id="node3" href="$classcNome.html" title="Domínio Nome. " alt="" coords="5,5,69,32"/>
+<area shape="rect" id="node4" href="$classcData.html" title="Domínio Data. " alt="" coords="94,5,151,32"/>
+<area shape="rect" id="node5" href="$classcClasseDeTermo.html" title="Domínio Classe de Termo. " alt="" coords="175,5,299,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="CntrIUAutenticacao" name="CntrIUAutenticacao">
+<area shape="rect" id="node2" href="$classIUAutenticacao.html" title="Interface de Autenticacao na camada de Apresentacao. " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node3" href="$classILNAutenticacao.html" title="Interface de Autenticacao na camada de Servico. " alt="" coords="141,5,259,32"/>
+</map>

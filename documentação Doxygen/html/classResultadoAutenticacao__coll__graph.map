@@ -1,0 +1,5 @@
+<map id="ResultadoAutenticacao" name="ResultadoAutenticacao">
+<area shape="rect" id="node2" href="$classResultado.html" title="Entidade Resultado. " alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node3" href="$classcSenha.html" title="Domínio Senha. " alt="" coords="111,5,178,32"/>
+<area shape="rect" id="node4" href="$classcCorreioEletronico.html" title="Domínio Correio Eletrônico. " alt="" coords="203,5,332,32"/>
+</map>
