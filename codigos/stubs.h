@@ -10,7 +10,7 @@
 using namespace std;
 
 
-/** Modulo de simulacao Autenticacao na camada de servico. Herda e implementa os metodo abstrato declarado na Interface provida e contem TRIGGERS para a funcionalidade de Autenticao de usuario. */
+/** Modulo de Autenticacao na camada de Servico (STUB). Herda e implementa o metodo abstrato declarado na Interface provida e contem TRIGGERS para a funcionalidade de Autenticao de usuario. */
 class StubLNAutenticacao : public ILNAutenticacao
 {
 
@@ -28,11 +28,11 @@ class StubLNAutenticacao : public ILNAutenticacao
 /** Gatilho para falha de sistema.*/
     string TRIGGER_ADMINISTRADOR = "admin@gmail.com";
 
-/** Metodo de Autenticacao da Interface da camada de servico.*/
+/** Metodo de Autenticacao da Interface da camada de Servico. Recebe um email e uma senha ja validados em formato.*/
     ResultadoAutenticacao autenticar(const cCorreioEletronico &, const cSenha &) throw(runtime_error);
 };
 
-/** Modulo de simulacao de Gestao de Usuario na camada de servico. Herda e implementa os metodos abstratos declarados na Interface provida e contem TRIGGERS para a funcionalidade de Gestao de Usuario.*/
+/** Modulo de Gestao de Usuario na camada de Servico. Herda e implementa os metodos abstratos declarados na Interface provida e contem TRIGGERS para a funcionalidade de Gestao de Usuario.*/
 class StubLNGestao : public ILNGestao
 {
 
@@ -67,11 +67,11 @@ class StubLNGestao : public ILNGestao
 
 };
 
-/** Modulo de simulacao Vocabulario na camada de servico. Herda e implementa os metodo abstrato declarado na Interface provida e contem TRIGGERS para a funcionalidade de Autenticao de usuario. */
+/** Modulo de Gestao de Vocabulario na camada de Servico. Herda e implementa os metodos abstratos declarados na Interface provida. */
 class StubLNVocabulario : public ILNVocabulario
 {
     private:
-        ResultadoAutenticacao user;
+        ResultadoAutenticacao user; /** Atributo Usuario. */
 
         void MostrarDados() throw(runtime_error);
         void AlterarDados();

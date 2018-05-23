@@ -1,0 +1,6 @@
+<map id="Gráfico de Hierarquia de Classes" name="Gráfico de Hierarquia de Classes">
+<area shape="rect" id="node1" href="$classResultado.html" title="Entidade Resultado. " alt="" coords="5,56,87,83"/>
+<area shape="rect" id="node2" href="$classResultadoAutenticacao.html" title="Entidade ResultadoAutenticacao. " alt="" coords="135,5,292,32"/>
+<area shape="rect" id="node3" href="$classResultadoGestao.html" title="Entidade ResultadoGestao. " alt="" coords="152,56,275,83"/>
+<area shape="rect" id="node4" href="$classResultadoVocabulario.html" title="Entidade ResultadoVocabulario. " alt="" coords="139,107,288,133"/>
+</map>

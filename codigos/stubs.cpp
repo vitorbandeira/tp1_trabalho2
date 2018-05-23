@@ -1,9 +1,5 @@
 #include "stubs.h"
 using namespace std;
-    //Defini��es de constantes.
-
-// EXEMPLO
-// --------------------------------------------------------
 
 // Defini��es de m�todo da classe stub do controlador da l�gica de neg�cio de autentica��o.
 
@@ -11,7 +7,7 @@ ResultadoAutenticacao StubLNAutenticacao::autenticar(const cCorreioEletronico &m
 
     ResultadoAutenticacao resultado;
 
-    // Diferentes comportamentos dependendo do valor da matr�cula.
+    
 
     if(strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
@@ -47,7 +43,7 @@ ResultadoGestao StubLNGestao::criarLeitor(const cCorreioEletronico &mail, const 
 
     ResultadoGestao resultado;
 
-    // Diferentes comportamentos dependendo do valor da matr�cula.
+    
 
     if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
@@ -72,7 +68,7 @@ ResultadoGestao StubLNGestao::criarDesenvolvedor(   const cCorreioEletronico &ma
 
     ResultadoGestao resultado;
 
-    // Diferentes comportamentos dependendo do valor da matr�cula.
+    
 
     if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
@@ -99,7 +95,7 @@ ResultadoGestao StubLNGestao::criarAdministrador(   const cCorreioEletronico &ma
 
     ResultadoGestao resultado;
 
-    // Diferentes comportamentos dependendo do valor da matr�cula.
+    
 
     if (strcmp(mail.getCorreioEletronico().c_str(), TRIGGER_FALHA.c_str()) == 0)
         resultado.setValor(ResultadoAutenticacao::FALHA);
@@ -322,7 +318,7 @@ void StubLNVocabulario::ConsultarDefinicao(const string &str)
 //desenvolvedor
 void StubLNVocabulario::CadastrarDev()
 {
-    cout << "Desenvolvedor cadastrdo com sucesso" << endl;
+    cout << "Desenvolvedor cadastrado com sucesso" << endl;
 }
 void StubLNVocabulario::CriarVocab()
 {

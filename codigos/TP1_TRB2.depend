@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1527024803 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/controladoras.cpp
+	"controladoras.h"
+	"stdio.h"
+	"interfaces.h"
+	<string>
+	<iostream>
+
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1526996245 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+	<string.h>
+
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/entidades.h
+	<iostream>
+	<cstring>
+	<string>
+	"dominios.h"
+
+1526906842 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/dominios.cpp
+	"dominios.h"
+	<string.h>
+	<stdlib.h>
+
+1526996245 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/entidades.cpp
+	<iostream>
+	"entidades.h"
+	<string.h>
+

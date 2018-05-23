@@ -1,0 +1,4 @@
+<map id="Gráfico de Hierarquia de Classes" name="Gráfico de Hierarquia de Classes">
+<area shape="rect" id="node1" href="$classIUGestao.html" title="Interface de Gestao de Usuario na camada de Apresentacao. " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$classCntrIUGestao.html" title="Controladora para Modulo de Gestao de Usuario na camada de Aprensentacao. " alt="" coords="132,5,235,32"/>
+</map>
