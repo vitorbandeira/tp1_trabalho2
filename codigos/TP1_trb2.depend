@@ -1,21 +1,48 @@
 # depslib dependency file v1.0
-1527023199 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.cpp
+1527024803 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/controladoras.cpp
 	"controladoras.h"
 	"stdio.h"
 	"interfaces.h"
 	<string>
 	<iostream>
 
-1527021872 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\controladoras.h
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/controladoras.h
 	"interfaces.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1527021829 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\interfaces.h
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/interfaces.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>
+
+1526996245 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/dominios.h
+	<iostream>
+	<cstring>
+	<stdexcept>
+	<string.h>
+
+1527027313 /home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/entidades.h
+	<iostream>
+	<cstring>
+	<string>
+	"dominios.h"
+
+1526906842 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/dominios.cpp
+	"dominios.h"
+	<string.h>
+	<stdlib.h>
+
+1526996245 source:/home/vribas/tp1/trabalho2/tp1_trabalho2/codigos/entidades.cpp
+	<iostream>
+	"entidades.h"
+	<string.h>
+
+1526761637 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.cpp
+	"dominios.h"
+	<string.h>
+	<stdlib.h>
 
 1526930835 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.h
 	<iostream>
@@ -23,94 +50,14 @@
 	<stdexcept>
 	<string.h>
 
-1527022422 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.h
-	<iostream>
-	<cstring>
-	<string>
-	"dominios.h"
-
-1526761637 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\dominios.cpp
-	"dominios.h"
-	<string.h>
-	<stdlib.h>
-
 1526943700 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.cpp
 	<iostream>
 	"entidades.h"
 	<string.h>
 
-1527022853 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\main.cpp
-	<stdexcept>
+1527034183 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\entidades.h
 	<iostream>
+	<cstring>
 	<string>
 	"dominios.h"
-	"entidades.h"
-	"interfaces.h"
-	"controladoras.h"
-	"stubs.h"
-
-1527021899 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.h
-	"Interfaces.h"
-	<stdexcept>
-	<iostream>
-	<typeinfo>
-
-1527022830 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\stubs.cpp
-	"stubs.h"
-
-1526325783 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\teste.c
-	<stdio.h>
-	<string.h>
-
-1526679879 source:c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\testes.cpp
-	"testes.h"
-	<string.h>
-
-1526325783 c:\users\pedro\documents\tp1_2\tp1_trabalho2\codigos\testes.h
-	"dominios.h"
-
-1526833230 source:d:\trabalho2\codigos\controladoras.cpp
-	"controladoras.h"
-	"stdio.h"
-
-1526853686 d:\trabalho2\codigos\controladoras.h
-	"interfaces.h"
-	"dominios.h"
-	<stdexcept>
-	<iostream>
-
-1526853688 d:\trabalho2\codigos\interfaces.h
-	"dominios.h"
-	"entidades.h"
-	<stdexcept>
-
-1526833230 d:\trabalho2\codigos\dominios.h
-	<iostream>
-	<cstring>
-	<stdexcept>
-	<string.h>
-
-1526853688 d:\trabalho2\codigos\entidades.h
-	<iostream>
-	<cstring>
-	"dominios.h"
-
-1526833230 source:d:\trabalho2\codigos\dominios.cpp
-	"dominios.h"
-	<string.h>
-	<stdlib.h>
-
-1526833230 source:d:\trabalho2\codigos\entidades.cpp
-	<iostream>
-	"entidades.h"
-	<string.h>
-
-1526833230 source:d:\trabalho2\codigos\stubs.cpp
-	"stubs.h"
-
-1526845960 d:\trabalho2\codigos\stubs.h
-	"Interfaces.h"
-	<stdexcept>
-	<iostream>
-	<typeinfo>
 

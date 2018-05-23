@@ -109,8 +109,7 @@ public:
   virtual ResultadoVocabulario Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
 
 
-  /** Metodo Virtual Abstrato Menu. Apresenta novas opcoes ao usuario caso ele tenha sido autenticado com sucesso. Implementado por CtrlIUVocabulario.*/
-  virtual void Menu(const ResultadoAutenticacao &user) throw(runtime_error) = 0;
+
   /** Metodo Virtual Abstrato MostrarDados. Exibe dados do usuario. */
   virtual void MostrarDados() = 0;
   /** Metodo Virtual Abstrato AlterarDados. Oferece ao usuario opcoes referentes a alteracao de dados quaisquer de conta. Implementada por CtrlIUVocabulario.*/
@@ -153,7 +152,7 @@ public:
   virtual void MostrarDados() throw(runtime_error) = 0;
   /** Metodo Virtual Abstrato AlterarDados. Simula a alteracao de dados pelo Stub correspondente (StubLNVocabulario).*/
   virtual void AlterarDados() = 0;
-  /** Metodo Virtual Abstrato ApagarUsuario. Simula a delecao de um usuario pelo Stub correspondente (StubLNVocabulario).*/  
+  /** Metodo Virtual Abstrato ApagarUsuario. Simula a delecao de um usuario pelo Stub correspondente (StubLNVocabulario).*/
   virtual void ApagarUsuario() = 0;
   /** Metodo Virtual Abstrato Listar. Simula a listagem de alguns vocabularios "existentes".*/
   virtual void Listar() = 0;
